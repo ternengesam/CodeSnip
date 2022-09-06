@@ -1,0 +1,639 @@
+# assert.strictEqual
+snippet ase
+	${1:assert}.strictEqual(${2:actual}, ${3:expected})${0}
+
+# assert.notStrictEqual
+snippet asn
+	${1:assert}.notStrictEqual(${2:actual}, ${3:expected})${0}
+
+# assert.deepStrictEqual
+snippet asd
+	${1:assert}.deepStrictEqual(${2:actual}, ${3:expected})${0}
+
+# assert.notDeepStrictEqual
+snippet asdn
+	${1:assert}.notDeepStrictEqual(${2:actual}, ${3:expected})${0}
+
+# assert.ifError
+snippet asi
+	${1:assert}.ifError(${2:err})${0}
+
+# assert.throws
+snippet ast
+	${1:assert}.throws(${2:actual}, ${3:expected})${0}
+
+# Node callback
+snippet cb
+	(err, ${1:value}) => {${0}}
+
+# Promise constructor
+snippet p
+	new Promise((resolve${1:, reject}) => {
+	  ${0}
+	})
+
+# Promise.then
+snippet then
+	${1:promise}.then((${2:value}) => {${0}})
+
+# chain then
+snippet .then
+	.then((${1:value}) => {${0}})
+
+# Promise.catch
+snippet catch
+	${1:promise}.catch((${2:err}) => {${0}})
+
+# chain catch
+snippet .catch
+	.catch((${1:err}) => {${0}})
+
+# class
+snippet cs
+	class ${1:ClassName} {
+	  constructor (${2:args}) {
+	    ${3}
+	  }
+	}
+
+# class extends
+snippet csx
+	class ${1:ClassName} extends ${2:BaseClass} {
+	  constructor (${3:args}) {
+	    super(${3:args})
+	    ${4}
+	  }
+	}
+
+# class method
+snippet csm
+	${1:name} (${2:args}) {
+	  ${3}
+	}
+
+# es5 singleton class
+snippet csi
+	function ${1:ClassName} (${2:args}) {
+	  if (!(this instanceof ${1:ClassName})) {
+	    return new ${1:ClassName}(${2:args})
+	  }
+	  ${3}
+	}
+
+# es5 function class
+snippet csf
+	function ${1:ClassName} (${2:args}) {
+	  ${3}
+	}
+
+# console.log
+snippet cl
+	console.log(${0})
+
+# console.error
+snippet ce
+	console.error(${0})
+
+# console.warn
+snippet cw
+	console.warn(${0})
+
+# console.dir
+snippet cd
+	console.dir(${0})
+
+# if statement
+snippet if
+	if (${1:condition}) {
+	  ${2}
+	}
+
+# else statement
+snippet el
+	else {
+	  ${1}
+	}
+
+# if/else statement
+snippet ife
+	if (${1:condition}) {
+	  ${2}
+	} else {
+	  ${3}
+	}
+
+# else if statement
+snippet ei
+	else if (${1:condition}) {
+	  ${2}
+	}
+
+# try/catch
+snippet tc
+	try {
+	  ${1}
+	} catch (${2:err}) {
+	  ${3}
+	}
+
+# try/finally
+snippet tf
+	try {
+	  ${1}
+	} finally {
+	  ${2}
+	}
+
+# try/catch/finally
+snippet tcf
+	try {
+	  ${1}
+	} catch (${2:err}) {
+	  ${3}
+	} finally {
+	  ${4}
+	}
+
+# var statement
+snippet v
+	var ${1:name}
+
+# var assignment
+snippet v=
+	var ${1:name} = ${2:value}
+
+# let statement
+snippet l
+	let ${1:name}
+
+# let assignment
+snippet l=
+	let ${1:name} = ${2:value}
+
+# const statement
+snippet c
+	const ${1:name}
+
+# const assignment
+snippet c=
+	const ${1:name} = ${2:value}
+
+# const yielded
+snippet cy
+	const ${1:name} = yield ${2:value}
+
+# const awaited
+snippet ca
+	const ${1:name} = await ${2:value}
+
+# let yielded
+snippet ly
+	let ${1:name} = yield ${2:value}
+
+# let awaited
+snippet la
+	let ${1:name} = await ${2:value}
+
+# const object
+snippet co
+	const ${1:name} = {
+	  ${2}
+	}
+
+# const array
+snippet ca
+	const ${1:name} = [
+	  ${2}
+	]
+
+# on event handler
+snippet on
+	${1:emitter}.on('${2:event}', ${3:args})
+
+# chain .on
+snippet .on
+	.on('${1:event}', ${2:handler})
+
+# once event handler
+snippet once
+	${1:emitter}.once('${2:event}', ${3:args})
+
+# chain .once
+snippet .once
+	.once('${1:event}', ${2:handler})
+
+# emit event
+snippet emit
+	${1:emitter}.emit('${2:event}', ${3:args})
+
+# chain .emit
+snippet .emit
+	.emit('${1:event}', ${2:args})
+
+# anonymous function
+snippet f
+	function (${1:args}) {${0}}
+
+# named function
+snippet fn
+	function ${1:name} (${2:args}) {${0}}
+
+# async anonymous function
+snippet asf
+	async function (${1:args}) {${0}}
+
+# async named function
+snippet asfn
+	async function ${1:name} (${2:args}) {${0}}
+
+# arrow function
+snippet af
+	(${1:args}) => ${2:statement}
+
+# arrow fn with body
+snippet afn
+	(${1:args}) => {${0}}
+
+# generator
+snippet gf
+	function * (${1:args}) {${0}}
+
+# named generator
+snippet gfn
+	function * ${1:name} (${2:args}) {${0}}
+
+# immediately-invoked function expression
+snippet iife
+	;(function (${1:args}) {
+	  ${0}
+	})(${2})
+
+# function apply
+snippet fa
+	${1:fn}.apply(${2:this}, ${3:args})
+
+# function call
+snippet fc
+	${1:fn}.call(${2:this}, ${3:args})
+
+# function bind
+snippet fb
+	${1:fn}.bind(${2:this}, ${3:args})
+
+# forEach loop
+snippet fe
+	${1:iterable}.forEach(${2:iterator})
+
+# chain forEach
+snippet .fe
+	.forEach(${1:iterator})
+
+# map
+snippet map
+	${1:iterable}.map(${2:iterator})
+
+# chain map
+snippet .map
+	.map(${1:iterator})
+
+# reduce
+snippet reduce
+	${1:iterable}.reduce((${2:previous}, ${3:current}) => {
+	  ${0}
+	}${4:, initial})
+
+# chain reduce
+snippet .reduce
+	.reduce((${1:previous}, ${2:current}) => {
+	  ${0}
+	}${3:, initial})
+
+# filter
+snippet filter
+	${1:iterable}.filter(${2:iterator})
+
+# chain filter
+snippet .filter
+	.filter(${1:iterator})
+
+# find
+snippet find
+	${1:iterable}.find(${2:iterator})
+
+# chain find
+snippet .find
+	.find(${1:iterator})
+
+# every
+snippet every
+	${1:iterable}.every(${2:iterator})
+
+# chain every
+snippet .every
+	.every(${1:iterator})
+
+# some
+snippet some
+	${1:iterable}.some(${2:iterator})
+
+# chain some
+snippet .some
+	.some(${1:iterator})
+
+# JSON key/value pair
+snippet ;
+	"${1:key}": "${2:value}"
+
+# JSON array
+snippet ;a
+	"${1:key}": ["${2:values}"]
+
+# JSON true
+snippet ;t
+	"${1:key}": true
+
+# for loop
+snippet fl
+	for (let ${1:i} = 0; ${1:i} < ${2:iterable}${3:.length}; ${1:i}++) {
+	  ${4}
+	}
+
+# for in loop
+snippet fi
+	for (let ${1:key} in ${2:source}) {
+	  if (${2:source}.hasOwnProperty(${1:key})) {
+	    ${3}
+	  }
+	}
+
+# for of loop
+snippet fo
+	for (let ${1:key} of ${2:source}) {
+	  ${3}
+	}
+
+# while loop
+snippet wl
+	while (${1:condition}) {
+	  ${2}
+	}
+
+# fast while loop
+snippet wf
+	let len = ${1:iterable}.length
+	let i = 0
+	
+	while (i < len) {
+	  let val = ${1:iterable}[${2:i++}]
+	  ${0}
+	}
+
+# use strict
+snippet us
+	'use strict'
+
+# const self this
+snippet self
+	const self = this
+
+# yield
+snippet ye
+	yield ${0}
+
+# await
+snippet aw
+	await ${0}
+
+# process.exit
+snippet pe
+	process.exit(${1:code})${0}
+
+# throw new error
+snippet thn
+	throw new ${1:TypeError}('${2:message}')${3}
+
+# if not typeof then throw error
+snippet iferr
+	if (typeof ${1:actual} !== ${2:expected}) {
+	  throw new ${3:TypeError}('${4:message}')
+	}${5}
+
+# JSON.stringify()
+snippet js
+	JSON.stringify($0)
+
+# JSON.parse()
+snippet jp
+	JSON.parse($0)
+
+# arrayify
+snippet afi
+	/* istanbul ignore next */
+	const arrayify = (val) => {
+	  if (!val) return []
+	  if (Array.isArray(val)) return val
+	  return [val]
+	}
+
+# fixture (useful for assert.throws)
+snippet fixture
+	function fixture () {
+	  ${1:fnName}
+	}${0}
+
+# require module
+snippet req
+	require('${1:pkg}')${0}
+
+# const require package
+snippet rr
+	const ${2:name} = require('${1:pkg}')${0}
+
+# exports.member
+snippet em
+	exports.${1:member} = ${2:value}
+
+# exports default
+snippet emd
+	exports['default'] = ${1:value}
+
+# module.exports
+snippet me
+	module.exports = ${1:value}
+
+# module exports and exports default
+snippet med
+	module.exports = exports['default'] = ${1:value}
+
+# module export
+snippet ex
+	export ${1:member}
+
+# module default export
+snippet exd
+	export default ${1:member}
+
+# import module
+snippet im
+	import ${2:name} from '${1:pkg}'${3}
+
+# import module as
+snippet ima
+	import ${2:*} as ${3:name} from '${1:pkg}'${4}
+
+# import module destructured
+snippet imd
+	import { $2 } from '${1:pkg}'${3}
+
+# key/value pair
+snippet kv
+	${1:key}: ${2:'value'}
+
+# prototype method
+snippet proto
+	${1:ClassName}.prototype.${2:key} = ${3:value}
+
+# chain prototype method
+snippet .proto
+	.prototype.${2:key} = ${3:value}
+
+# extend-shallow
+snippet xa
+	extend(${1:defaults}, ${2:sources})${0}
+
+# Object.assign
+snippet oa
+	Object.assign(${1:dest}, ${2:source})${0}
+
+# Object.keys
+snippet ok
+	Object.keys(${1:obj})${0}
+
+# return
+snippet r
+	return ${0}
+
+# return this
+snippet rth
+	return this
+
+# return null
+snippet rn
+	return null
+
+# return true
+snippet rt
+	return true
+
+# return false
+snippet rf
+	return false
+
+# return 0
+snippet r0
+	return 0
+
+# return -1
+snippet r-1
+	return -1
+
+# return promise
+snippet rp
+	return new Promise((resolve${1:, reject}) => {
+	  ${0}
+	})
+
+# async test (mocha/mukla)
+snippet ita
+	${1:it}('${2:description}', (${3:done}) => {
+	  ${0}
+	})
+
+# synchronous test (mocha/mukla)
+snippet its
+	${1:it}('${2:description}', () => {
+	  ${0}
+	})
+
+# tape-style test
+snippet te
+	${1:test}('${2:description}', (${3:t}) => {
+	  ${0}
+	})
+
+# setTimeout
+snippet st
+	setTimeout(() => {
+	  ${0}
+	}, ${1:delay})
+
+# process.nextTick
+snippet nt
+	process.nextTick(() => {
+	  ${0}
+	}${1:, args})
+
+# setInterval
+snippet si
+	setInterval(() => {
+	  ${0}
+	}, ${1:delay})
+
+# setImmediate
+snippet sim
+	setImmediate(() => {
+	  ${0}
+	})
+
+# String
+snippet S
+	String
+
+# Symbol
+snippet Sy
+	Symbol('${1:name}')
+
+# Boolean
+snippet B
+	Boolean
+
+# Number
+snippet N
+	Number
+
+# Object
+snippet O
+	Object
+
+# Array
+snippet A
+	Array
+
+# Date
+snippet D
+	Date
+
+# RegExp
+snippet Rx
+	RegExp
+
+# Promise
+snippet P
+	Promise
+
+# typeof equal to
+snippet tof
+	typeof ${1:source} === '${2:value}'
+
+# typeof not equal to
+snippet tofi
+	typeof ${1:source} !== '${2:value}'
+
+# instanceof
+snippet iof
+	${1:source} instanceof ${2:Object}
+
+# Array.isArray()
+snippet ia
+	Array.isArray(${1:source})
+

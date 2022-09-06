@@ -1,0 +1,211 @@
+# Constructor
+snippet ctor
+	/**
+	 *
+	 */
+	constructor() {
+		super();
+		$0
+	}
+	
+# Class Definition
+snippet class
+	class ${1:name} {
+		constructor(${2:parameters}) {
+			$0
+		}
+	}
+	
+# Public Method Definition
+snippet public method
+	/**
+	 * ${1:name}
+	 */
+	public ${1:name}() {
+		$0
+	}
+	
+# Private Method Definition
+snippet private method
+	private ${1:name}() {
+		$0
+	}
+	
+# Import external module
+snippet import
+	import { $0 } from "${1:module}";
+	
+# Property getter
+snippet get
+	
+	public get ${1:value}() : ${2:string} {
+		${3:return $0}
+	}
+	
+	
+# Log to the console
+snippet log
+	console.log($1);
+	$0
+	
+# Log warning to the console
+snippet warn
+	console.warn($1);
+	$0
+	
+# Log error to the console
+snippet error
+	console.error($1);
+	$0
+	
+# Define a full property
+snippet prop
+	
+	private _${1:value} : ${2:string};
+	public get ${1:value}() : ${2:string} {
+		return this._${1:value};
+	}
+	public set ${1:value}(v : ${2:string}) {
+		this._${1:value} = v;
+	}
+	
+	
+# Triple-slash reference
+snippet ref
+	/// <reference path="$1" />
+	$0
+	
+# Property setter
+snippet set
+	
+	public set ${1:value}(v : ${2:string}) {
+		this.$3 = v;
+	}
+	
+	
+# Throw Exception
+snippet throw
+	throw new Error("$1");
+	$0
+	
+# For Loop
+snippet for
+	for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {
+		const ${3:element} = ${2:array}[${1:index}];
+		$TM_SELECTED_TEXT$0
+	}
+	
+# For-Each Loop using =>
+snippet foreach =>
+	${1:array}.forEach(${2:element} => {
+		$TM_SELECTED_TEXT$0
+	});
+	
+# For-In Loop
+snippet forin
+	for (const ${1:key} in ${2:object}) {
+		if (Object.prototype.hasOwnProperty.call(${2:object}, ${1:key})) {
+			const ${3:element} = ${2:object}[${1:key}];
+			$TM_SELECTED_TEXT$0
+		}
+	}
+	
+# For-Of Loop
+snippet forof
+	for (const ${1:iterator} of ${2:object}) {
+		$TM_SELECTED_TEXT$0
+	}
+	
+# For-Await-Of Loop
+snippet forawaitof
+	for await (const ${1:iterator} of ${2:object}) {
+		$TM_SELECTED_TEXT$0
+	}
+	
+# Function Statement
+snippet function
+	function ${1:name}(${2:params}:${3:type}) {
+		$TM_SELECTED_TEXT$0
+	}
+	
+# If Statement
+snippet if
+	if (${1:condition}) {
+		$TM_SELECTED_TEXT$0
+	}
+	
+# If-Else Statement
+snippet ifelse
+	if (${1:condition}) {
+		$TM_SELECTED_TEXT$0
+	} else {
+		
+	}
+	
+# New Statement
+snippet new
+	const ${1:name} = new ${2:type}(${3:arguments});$0
+	
+# Switch Statement
+snippet switch
+	switch (${1:key}) {
+		case ${2:value}:
+			$0
+			break;
+	
+		default:
+			break;
+	}
+	
+# While Statement
+snippet while
+	while (${1:condition}) {
+		$TM_SELECTED_TEXT$0
+	}
+	
+# Do-While Statement
+snippet dowhile
+	do {
+		$TM_SELECTED_TEXT$0
+	} while (${1:condition});
+	
+# Try-Catch Statement
+snippet trycatch
+	try {
+		$TM_SELECTED_TEXT$0
+	} catch (${1:error}) {
+		
+	}
+	
+# Set Timeout Function
+snippet settimeout
+	setTimeout(() => {
+		$TM_SELECTED_TEXT$0
+	}, ${1:timeout});
+	
+# Folding Region Start
+snippet #region
+	//#region $0
+	
+# Folding Region End
+snippet #endregion
+	//#endregion
+	
+# Create a new Promise
+snippet newpromise
+	new Promise<${1:void}>((resolve, reject) => {
+		$TM_SELECTED_TEXT$0
+	})
+	
+# Async Function Statement
+snippet async function
+	async function ${1:name}(${2:params}:${3:type}) {
+		$TM_SELECTED_TEXT$0
+	}
+	
+# Async Function Expression
+snippet async arrow function
+	async (${1:params}:${2:type}) => {
+		$TM_SELECTED_TEXT$0
+	}
+	

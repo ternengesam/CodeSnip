@@ -1,0 +1,2300 @@
+# Returns the absolute value of a number
+snippet abs
+	abs(x)
+# An example for using abs method
+snippet built_in.abs=>int
+	x = abs(-7.25)
+	print(x)
+	
+# An example for using abs method
+snippet built_in.abs=>float
+	x = abs(-20)
+	print(x)
+	
+# An example for using abs method
+snippet built_in.abs=>complex
+	x = abs((3 - 4j))
+	print(x)
+	
+# Returns True if all items in an iterable object are true
+snippet all
+	all(iterable)
+# An example for using all with list
+snippet built_in.all=>list_1
+	mylist = [True, True, True]
+	x = all(mylist)
+	print(x)
+	
+	# Return True
+	
+# An example for using all with list
+snippet built_in.all=>list_2
+	mylist = [0, 1, 1]
+	x = all(mylist)
+	print(x)
+	
+	# Returns False because 0 is the same as False
+	
+# An example for using all with tuple
+snippet built_in.all=>tuple
+	mytuple = (0, True, False)
+	x = all(mytuple)
+	print(x)
+	
+	# Returns False because both the first and the third items are False
+	
+# An example for using all with set
+snippet built_in.all=>set
+	myset = {0, 1, 0}
+	x = all(myset)
+	print(x)
+	
+	# Returns False because both the first and the third items are False
+	
+# An example for using all with dictionary
+snippet built_in.all=>dictionary
+	mydict = {0 : 'Apple', 1 : 'Orange'}
+	x = all(mydict)
+	print(x)
+	
+	# Returns False because the first key is false.
+	# For dictionaries the all() function checks the keys, not the values.
+	
+# Returns True if any item in an iterable object is true
+snippet any
+	any(iterable)
+# An example for using all with list
+snippet built_in.any=>list_1
+	mylist = [False, True, False]
+	x = any(mylist)
+	print(x)
+	
+	# Return True
+	
+# Returns a readable version of an object. Replaces none-ascii characters with escape character
+snippet ascii
+	ascii(object)
+# An example for using ascii
+snippet built_in.ascii=>_list_1
+	x = ascii('My name is Ståle')
+	print(x)
+	
+# Returns the binary version of a number
+snippet bin
+	bin(x)
+# An example for using ascii
+snippet built_in.bin=>_1
+	x = bin(36)
+	print(x)
+	# Result : 0b100100
+	
+# Returns the boolean value of the specified object
+snippet bool
+	bool(object)
+# An example for using bool
+snippet built_in.bool=>_1
+	x = bool(1)
+	print(x)
+	# Result : True
+	
+# Returns an array of bytes
+snippet bytearray
+	bytearray([source[, encoding[, errors]]])
+# An example for using bool
+snippet built_in.bytearray=>_1
+	x = bytearray(4)
+	print(x)
+	
+# Returns a bytes object
+snippet bytes
+	bytes(x, encoding, error)
+# An example for using bytes
+snippet built_in.bytes=>_1
+	x = x = bytes(4)
+	print(x)
+	
+# Returns True if the specified object is callable, otherwise False
+snippet callable
+	callable(object)
+# An example for using callable
+snippet built_in.callable=>_1
+	def x():
+	a = 5
+	
+	print(callable(x))
+	
+# An example for using bytes
+snippet built_in.callable=>_2
+	x = 5
+	
+	print(callable(x))
+	
+# Returns a character from the specified Unicode code.
+snippet chr
+	chr(i)
+# An example for using bytes
+snippet built_in.chr=>_1
+	x = chr(97)
+	
+	print(x)
+	
+# Converts a method into a class method
+snippet classmethod
+	classmethod(function)
+# Returns the specified source as an object, ready to be executed
+snippet compile
+	compile(source, filename, mode, flag, dont_inherit, optimize)
+# An example for using compile
+snippet built_in.compile=>_1
+	mytext = 'print(55)'
+	x = compile('mytext', 'test', 'eval')
+	exec(x)
+	
+# An example for using compile
+snippet built_in.compile=>_1
+	mytext = 'print(55)
+print(88)'
+	x = compile('mytext', 'test', 'exec')
+	exec(x)
+	
+# Returns a complex number
+snippet complex
+	complex(real, imaginary)
+# An example for using complex
+snippet built_in.complex=>_1
+	x = complex(3, 5)
+	print(x)
+	
+# An example for using complex
+snippet built_in.complex=>_2
+	x = complex('3+5j')
+	print(x)
+	
+# Deletes the specified attribute (property or method) from the specified object
+snippet delattr
+	delattr(object, attribute)
+# An example for using delattr
+snippet built_in.delattr=>_1
+	class Person:
+	 name = 'John'
+	 age = 36
+	 country = 'Norway'
+	
+	delattr(Person, 'age')
+	# The Person object will no longer contain an age property
+	
+# Returns a dictionary (Array)
+snippet dict
+	dict(keyword arguments)
+# An example for using dict
+snippet built_in.dict=>_1
+	x = dict(name = 'John', age = 36, country = 'Norway')
+	print(x)
+	
+# Returns a list of the specified object's properties and methods
+snippet dir
+	dir(object)
+# An example for using dict
+snippet built_in.dir=>
+	class Person:
+	 name = 'John'
+	 age = 36
+	 country = 'Norway'
+	print(dir(Person))
+	
+# Returns the quotient and the remainder when argument1 is divided by argument2
+snippet divmod
+	divmod(divident, divisor)
+# An example for using divmod
+snippet built_in.divmod=>_1
+	x = divmod(5, 2)
+	print(x)
+	
+# Takes a collection (e.g. a tuple) and returns it as an enumerate object
+snippet enumerate
+	enumerate(iterable, start)
+# An example for using enumerate
+snippet built_in.enumerate=>_1
+	x = ('apple', 'banana', 'cherry')
+	y = enumerate(x)
+	
+	print(list(y))
+	
+# Evaluates and executes an expression
+snippet eval
+	eval(expression, globals, locals)
+# An example for using eval
+snippet built_in.eval=>_1
+	x = 'print(55)'
+	eval(x)
+	
+# Executes the specified code (or object)
+snippet exec
+	exec(object, globals, locals)
+# An example for using exec
+snippet built_in.exec=>_1
+	x = 'age = 25
+print(age)'
+	exec(x)
+	
+# Use a filter function to exclude items in an iterable object
+snippet filter
+	filter(function, iterable)
+# An example for using filter
+snippet built_in.filter=>_1
+	ages = [5, 12, 17, 18, 24, 32]
+	
+	def myFunc(x):
+	 if x < 18:
+	   return False
+	 else:
+	   return True
+	
+	adults = filter(myFunc, ages)
+	
+	for x in adults:
+	 print(x)
+	
+# Returns a floating point number
+snippet float
+	float(value)
+# An example for using float
+snippet built_in.float=>_1
+	x = float(3)
+	print(x)
+	
+# An example for using float
+snippet built_in.float=>_2
+	x = float('3.500')
+	print(x)
+	
+# Formats specified values in a string
+snippet .format
+	.format()
+# An example for using format
+snippet built_in.format=>_1
+	x = format(255, 'x')
+	print(x)
+	
+# Returns a frozenset object
+snippet frozenset
+	frozenset(iterable)
+# An example for using frozenset
+snippet built_in.frozenset=>_1
+	mylist = ['apple', 'banana', 'cherry']
+	x = frozenset(mylist)
+	print(x)
+	
+# An example for using frozenset
+snippet built_in.frozenset=>_2
+	mylist = ['apple', 'banana', 'cherry']
+	x = frozenset(mylist)
+	x[1] = 'strawberry'
+	print(x)
+	
+# Returns the value of the specified attribute (property or method)
+snippet getattr
+	getattr(object, attribute, default)
+# An example for using frozenset
+snippet built_in.frozenset=>_3
+	class Person:
+	 name = 'John'
+	 age = 36
+	 country = 'Norway'
+	
+	x = getattr(Person, 'age')
+	
+	print(x)
+	
+# Returns the current global symbol table as a dictionary
+snippet globals
+	globals()
+# An example for using globals
+snippet built_in.globals=>_1
+	x = globals()
+	print(x)
+	
+# An example for using globals
+snippet built_in.globals=>_2
+	x = globals()
+	print(x['__file__'])
+	
+# Returns True if the specified object has the specified attribute (property/method)
+snippet hasattr
+	hasattr(object, attribute)
+# An example for using hasattr
+snippet built_in.hasattr=>
+	class Person:
+	 name = 'John'
+	 age = 36
+	 country = 'Norway'
+	
+	x = hasattr(Person, 'age')
+	
+	print(x)
+	
+# Returns the hash value of a specified object
+snippet hash
+	hash(object)
+# Executes the built-in help system
+snippet help
+	help(object)
+# Converts a number into a hexadecimal value
+snippet hex
+	hex(number)
+# An example for using hasattr
+snippet built_in.hex=>
+	x = hex(255)
+	print(x)
+	
+# Returns an integer number
+snippet int
+	int(value, base)
+# An example for using int
+snippet built_in.int=>_1
+	x = int(3.5)
+	print(x)
+	
+# An example for using int
+snippet built_in.int=>_2
+	x = int('12')
+	print(x)
+	
+# Returns the id of an object
+snippet id
+	id(object)
+# An example for using id
+snippet built_in.id=>
+	class Foo:
+	b = 5
+	
+	dummyFoo = Foo()
+	print('id of dummyFoo =',id(dummyFoo))
+	
+# Allowing user input
+snippet input
+	input(prompt)
+# An example for using input
+snippet built_in.input=>_1
+	x = input('Enter your name:')
+	print('Hello, ' + x)
+	
+# An example for using input
+snippet built_in.input=>_2
+	print('Enter your name:')
+	x = input()
+	print('Hello, ' + x)
+	
+# Returns True if a specified object is an instance of a specified object
+snippet isinstance
+	isinstance(object, type)
+# An example for using isinstance
+snippet built_in.isinstance=>_1
+	x = isinstance(5, int)
+	
+	print(x)
+	
+# An example for using isinstance
+snippet built_in.isinstance=>_2
+	x = isinstance('Hello', (float, int, str, list, dict, tuple))
+	
+	print(x)
+	
+# An example for using isinstance
+snippet built_in.isinstance=>_3
+	class myObj:
+	 name = 'John'
+	
+	y = myObj()
+	
+	x = isinstance(y, myObj)
+	print(x)
+	
+# Returns True if a specified class is a subclass of a specified object
+snippet issubclass
+	issubclass(object, subclass)
+# An example for using isinstance
+snippet built_in.issubclass=>
+	class myAge:
+	 age = 36
+	
+	class myObj(myAge):
+	 name = 'John'
+	 age = myAge
+	
+	 x = issubclass(myObj, myAge)
+	
+	print(x)
+	
+# Returns an iterator object
+snippet iter
+	iter(object, subclass)
+# An example for using iter
+snippet built_in.iter=>
+	x = iter(['apple', 'banana', 'cherry'])
+	print(next(x))
+	print(next(x))
+	print(next(x))
+	
+# Returns the length of an object
+snippet len
+	len(s)
+# An example for using len
+snippet built_in.len=>_1
+	mylist = ['apple', 'banana', 'cherry']
+	x = len(mylist)
+	
+# An example for using len
+snippet built_in.len=>_2
+	mylist = 'Hello'
+	x = len(mylist)
+	
+# Returns a list
+snippet list
+	list([iterable])
+# An example for using list
+snippet built_in.list=>
+	x = list(('apple', 'banana', 'cherry'))
+	print(x)
+	
+# Returns an updated dictionary of the current local symbol table
+snippet locals
+	locals()
+# An example for using locals
+snippet built_in.locals=>_1
+	x = locals()
+	print(x)
+	
+# An example for using locals
+snippet built_in.locals=>_2
+	x = locals()
+	print(x['__file__'])
+	
+# Returns the specified iterator with the specified function applied to each item
+snippet map
+	map(function, iterables)
+# An example for using map
+snippet built_in.map=>_1
+	def myfunc(n):
+	 return len(n)
+	
+	x = map(myfunc, ('apple', 'banana', 'cherry'))
+	
+	print(x)
+	
+# An example for using map
+snippet built_in.map=>_2
+	def myfunc(a, b):
+	 return a + b
+	
+	x = map(myfunc, ('apple', 'banana', 'cherry'), ('orange', 'lemon', 'pineapple'))
+	
+	print(x)
+	
+# Returns the largest item in an iterable
+snippet max
+	max(iterable)
+# An example for using max
+snippet built_in.max=>_1
+	x = max(5, 10)
+	print(x)
+	
+# An example for using max
+snippet built_in.max=>_2
+	x = max('Mike', 'John', 'Vicky')
+	print(x)
+	
+# An example for using max
+snippet built_in.max=>_3
+	a = (1, 5, 3, 9)
+	x = max(a)
+	print(x)
+	
+# Returns a memory view object
+snippet memoryview
+	memoryview(obj)
+# An example for using memoryview
+snippet built_in.memoryview=>
+	x = memoryview(b'Hello')
+	print(x)
+	
+	#return the Unicode of the first character
+	print(x[0])
+	
+	#return the Unicode of the second character
+	print(x[1])
+	
+# Returns the smallest item in an iterable
+snippet min
+	min(iterable)
+# An example for using min
+snippet built_in.min=>_1
+	x = min(5, 10)
+	print(x)
+	
+# An example for using min
+snippet built_in.min=>_2
+	x = min('Mike', 'John', 'Vicky')
+	print(x)
+	
+# An example for using min
+snippet built_in.min=>_3
+	a = (1, 5, 3, 9)
+	x = min(a)
+	print(x)
+	
+# Returns the next item in an iterable
+snippet next
+	next(iterable, default)
+# An example for using next
+snippet built_in.next=>_1
+	mylist = iter(['apple', 'banana', 'cherry'])
+	x = next(mylist)
+	print(x)
+	x = next(mylist)
+	print(x)
+	x = next(mylist)
+	print(x)
+	
+# An example for using next
+snippet built_in.next=>_2
+	mylist = iter(['apple', 'banana', 'cherry'])
+	x = next(mylist, 'orange')
+	print(x)
+	x = next(mylist, 'orange')
+	print(x)
+	x = next(mylist, 'orange')
+	print(x)
+	x = next(mylist, 'orange')
+	print(x)
+	
+# Returns a new object
+snippet object
+	object()
+# An example for using object
+snippet built_in.object=>
+	x = object()
+	print(dir(x))
+	
+# Converts a number into an octal
+snippet oct
+	oct(x)
+# An example for using oct
+snippet built_in.oct=>
+	x = oct(12)
+	print(x)
+	
+# Opens a file and returns a file object
+snippet open
+	open(file, mode)
+# An example for using open
+snippet built_in.open=>
+	f = open('demofile.txt', 'r')
+	print(f.read())
+	
+# Given a string of length one, return an integer representing the Unicode code point of the character when the argument is a unicode object, or the value of the byte when the argument is an 8-bit string.
+snippet ord
+	ord(c)
+# An example for using ord
+snippet built_in.ord=>
+	x=ord('a')
+	print(x)
+	
+# Return x to the power y
+snippet pow
+	pow(x, y)
+# An example for using pow
+snippet built_in.pow=>
+	x=pow(2,5)
+	print(x)
+	
+# Prints to the standard output device
+snippet print
+	print(object(s), separator=separator, end=end, file=file, flush=flush)
+# An example for using print
+snippet built_in.print=>_1
+	print('Hello', 'how are you?')
+	
+# An example for using print
+snippet built_in.print=>_2
+	x = ('apple', 'banana', 'cherry')
+	print(x)
+	
+# An example for using print
+snippet built_in.print=>_3
+	print('Hello', 'how are you?', sep=' ---')
+	
+# Gets, sets, deletes a property
+snippet property
+	property(fget=None, fset=None, fdel=None, doc=None)
+# An example for using property
+snippet built_in.property=>
+	class C:
+	    def __init__(self):
+	        self._x = None
+	    def getx(self):
+	        return self._x
+	    def setx(self, value):
+	        self._x = value
+	    def delx(self):
+	        del self._x
+	    x = property(getx, setx, delx, 'I'm the 'x' property.')
+	
+# Returns a sequence of numbers, starting from 0 and increments by 1 (by default)
+snippet range
+	range(start, stop, step)
+# An example for using range
+snippet built_in.range=>_1
+	x = range(6)
+	for n in x:
+	  print(n)
+	
+# An example for using range
+snippet built_in.range=>_2
+	x = range(3, 6)
+	for n in x:
+	  print(n)
+	
+# An example for using range
+snippet built_in.range=>_3
+	x = range(3, 20, 2)
+	for n in x:
+	  print(n)
+	
+# Returns a readable version of an object
+snippet repr
+	repr(object)
+# Returns a reversed iterator
+snippet reversed
+	reversed(seq)
+# An example for using reversed
+snippet built_in.reversed=>
+	alph = ['a', 'b', 'c', 'd']
+	ralph = reversed(alph)
+	for x in ralph:
+	  print(x)
+	
+# Rounds a numbers
+snippet round
+	round(number[, ndigits])
+# An example for using round
+snippet built_in.round=>_1
+	x = round(5.76543, 2)
+	print(x)
+	
+# An example for using round
+snippet built_in.round=>_2
+	x = round(5.76543)
+	print(x)
+	
+# Returns a new set object
+snippet set
+	set(iterable)
+# An example for using set
+snippet built_in.set=>
+	x = set(('apple', 'banana', 'cherry'))
+	print(x)
+	
+# Sets an attribute (property/method) of an object
+snippet setattr
+	setattr(object, name, value)
+# An example for using setattr
+snippet built_in.setattr=>
+	class Person:
+	  name = 'John'
+	  age = 36
+	  country = 'Norway'
+	setattr(Person, 'age', 40)
+	# The age property will now have the value: 40
+	x = getattr(Person, 'age')
+	print(x)
+	
+# Returns a slice object
+snippet slice
+	slice(start, end, step)
+# An example for using slice
+snippet built_in.slice=>_1
+	a = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
+	x = slice(2)
+	print(a[x])
+	
+# An example for using slice
+snippet built_in.slice=>_2
+	a = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
+	x = slice(3, 5)
+	print(a[x])
+	
+# An example for using slice
+snippet built_in.slice=>_3
+	a = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
+	x = slice(0, 8, 3)
+	print(a[x])
+	
+# Returns a sorted list
+snippet sorted
+	sorted(iterable, key=key, reverse=reverse)
+# An example for using sorted
+snippet built_in.sorted=>_1
+	a = ('b', 'g', 'a', 'd', 'f', 'c', 'h', 'e')
+	x = sorted(a)
+	print(x)
+	
+# An example for using sorted
+snippet built_in.sorted=>_2
+	a = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
+	x = sorted(a, reverse=True)
+	print(x)
+	
+# An example for using sorted
+snippet built_in.sorted=>_3
+	a = ('b', 'g', 'a', 'd', 'f', 'c', 'h', 'e')
+	x = sorted(a)
+	print(x)
+	
+# Converts a method into a static method
+snippet staticmethod
+	staticmethod(function)
+# Returns a string object
+snippet str
+	str(object, encoding=encoding, errors=errors)
+# An example for using str
+snippet built_in.str=>
+	x = str(3.5)
+	print(x)
+	
+# Sums the items of an iterator
+snippet sum
+	sum(iterable, start)
+# An example for using sum
+snippet built_in.sum=>_1
+	a = (1, 2, 3, 4, 5)
+	x = sum(a)
+	print(x)
+	
+# An example for using sum
+snippet built_in.sum=>_2
+	a = (1, 2, 3, 4, 5)
+	x = sum(a, 7)
+	print(x)
+	
+# Return a proxy object that delegates method calls to a parent or sibling class of type.
+snippet super
+	super(type[, object-or-type])
+# Returns a tuple
+snippet tuple
+	tuple(iterable)
+# An example for using tuple
+snippet built_in.tuple=>
+	x = tuple(('apple', 'banana', 'cherry'))
+	print(x)
+	
+# Returns the type of an object
+snippet type
+	type(object, bases, dict)
+# An example for using type
+snippet built_in.type=>
+	a = ('apple', 'banana', 'cherry')
+	b = 'Hello World'
+	c = 33
+	x = type(a)
+	y = type(b)
+	z = type(c)
+	
+# Return the Unicode string of one character whose Unicode code is the integer i.
+snippet unichr
+	unichr(i)
+# Returns the __dict__ property of an object
+snippet vars
+	vars(object)
+# An example for using vars
+snippet built_in.vars=>
+	class Person:
+	  name = 'John'
+	  age = 36
+	  country = 'norway'
+	x = vars(Person)
+	
+# Returns an iterator, from two or more iterators
+snippet zip
+	zip(iterator1, iterqator2, iterator3 ...)
+# An example for using zip
+snippet built_in.zip=>_1
+	a = ('John', 'Charles', 'Mike')
+	b = ('Jenny', 'Christy', 'Monica')
+	x = zip(a, b)
+	#use the tuple() function to display a readable version of the result:
+	print(tuple(x))
+	
+# An example for using zip
+snippet built_in.zip=>_2
+	a = ('John', 'Charles', 'Mike')
+	b = ('Jenny', 'Christy', 'Monica', 'Vicky')
+	x = zip(a, b)
+	#use the tuple() function to display a readable version of the result:
+	print(tuple(x))
+	
+# if Statements
+snippet if
+	if condition:
+	  pass
+	
+# if/else if Statements
+snippet ifelif
+	if condition:
+	  pass
+	elif condition:
+	  pass
+	
+# if/else if/else Statements
+snippet ifelifelse
+	if condition:
+	  pass
+	elif condition:
+	  pass
+	else:
+	  pass
+	
+# if/else Statements
+snippet ifelse
+	if condition:
+	  pass
+	else:
+	  pass
+	
+# else Statements
+snippet else
+	else:
+	  pass
+	
+# ifshort Statements
+snippet ifshort
+	print('A') if a > b else print('A')
+# A lambda function can take any number of arguments, but can only have one expression.
+snippet lambda
+	lambda arguments : expression
+# for Statements
+snippet for
+	for item in range:
+	 
+	
+# An example for using for
+snippet for=>
+	fruits = ['apple', 'banana', 'cherry']
+	for x in fruits:
+	  print(x)
+	
+# An example for using for
+snippet for=>through_a_string
+	for x in 'banana':
+	  print(x)
+	
+# An example for using for
+snippet for=>break_statement
+	fruits = ['apple', 'banana', 'cherry']
+	for x in fruits:
+	 print(x)
+	 if x == 'banana':
+	   break
+	
+# An example for using for
+snippet for=>continue_statement
+	fruits = ['apple', 'banana', 'cherry']
+	for x in fruits:
+	 print(x)
+	 if x == 'banana':
+	   continue
+	 print(x)
+	
+# An example for using for
+snippet for=>range_function_1
+	for x in range(6):
+	 print(x)
+	
+# An example for using for
+snippet for=>range_function_2
+	for x in range(2, 6):
+	 print(x)
+	
+# An example for using for
+snippet for=>range_function_3
+	for x in range(2, 30, 3):
+	 print(x)
+	
+# An example for using for
+snippet for=>for_else
+	for x in range(2, 6):
+	 print(x)
+	else:
+	 print('Finally finished!')
+	
+# An example for using for
+snippet for=>for_else
+	adj = ['red', 'big', 'tasty']
+	fruits = ['apple', 'banana', 'cherry']
+	for x in adj:
+	  for y in fruits:
+	    print(x, y)
+	
+# while Statements
+snippet while
+	while expression:
+	  pass
+	
+# while Statements
+snippet while_else
+	while expression:
+	  pass
+	else:
+	  pass
+	
+# while Statements
+snippet while=>
+	i = 1
+	while i < 6:
+	  print(i)
+	  i += 1
+	
+# while Statements
+snippet while=>break_statement
+	i = 1
+	while i < 6:
+	 print(i)
+	  if i == 3:
+	    break
+	  i += 1
+	
+# while Statements
+snippet while=>continue_statement
+	i = 1
+	while i < 6:
+	  i += 1
+	  print(i)
+	  if i == 3:
+	    continue
+	  print(i)
+	
+# Defining Function
+snippet function=>
+	def name(args):
+	 pass
+	
+# Defining Function
+snippet def=>
+	def name(args):
+	 pass
+	
+# Defining Function wqith default values
+snippet def=>with_default_value
+	def name(name, lastName='john')
+	 pass
+	
+# Converts the first character to upper case
+snippet .capitalize
+	.capitalize()
+# An example for using capitalize
+snippet string.capitalize=>_1
+	txt = hello, and welcome to my world.
+	
+	x = txt.capitalize()
+	
+	print (x)
+	
+# An example for using capitalize
+snippet string.capitalize=>_2
+	txt = '36 is my age.'
+	
+	x = txt.capitalize()
+	
+	print (x)
+	
+# Converts string into lower case
+snippet .casefold
+	.casefold()
+# An example for using casefold
+snippet string.casefold=>
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.casefold()
+	
+	print(x)
+	
+# Returns a centered string
+snippet .center
+	.center()
+# An example for using center
+snippet string.center=>_1
+	txt = 'banana'
+	
+	x = txt.center(20)
+	
+	print(x)
+	
+# An example for using center
+snippet string.center=>_2
+	txt = 'banana'
+	
+	x = txt.center(20,'O')
+	
+	print(x)
+	
+# Returns the number of times a specified value occurs in a string
+snippet .count
+	.count()
+# An example for using count
+snippet string.count=>_1
+	txt = 'I love apples, apple are my favorite fruit'
+	
+	x = txt.count('apple')
+	
+	print(x)
+	
+# An example for using count
+snippet string.count=>_2
+	txt = 'I love apples, apple are my favorite fruit'
+	
+	x = txt.count('apple', 10, 24)
+	
+	print(x)
+	
+# Returns an encoded version of the string
+snippet .encode
+	.encode()
+# An example for using encode
+snippet string.encode=>
+	txt = 'My name is Ståle'
+	
+	print(txt.encode(encoding='ascii',errors='backslashreplace')
+	print(txt.encode(encoding='ascii',errors='ignore')
+	print(txt.encode(encoding='ascii',errors='namereplace')
+	print(txt.encode(encoding='ascii',errors='replace')
+	print(txt.encode(encoding='ascii',errors='xmlcharrefreplace')
+	print(txt.encode(encoding='ascii',errors='strict')
+	
+# Returns true if the string ends with the specified value
+snippet .endswith
+	.endswith()
+# An example for using endswith
+snippet string.endswith=>_1
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.endswith('.')
+	
+	print(x)
+	
+# An example for using endswith
+snippet string.endswith=>_2
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.endswith('my world.', 5, 11)
+	
+	print(x)
+	
+# Sets the tab size of the string
+snippet .expandtabs
+	.expandtabs()
+# An example for using expandtabs
+snippet string.expandtabs=>_1
+	txt = 'H	e	l	l	o'
+	
+	x = txt.expandtabs(2)
+	
+	print(x)
+	
+# An example for using expandtabs
+snippet string.expandtabs=>_2
+	txt = 'H	e	l	l	o'
+	
+	print(txt)
+	print(txt.expandtabs())
+	print(txt.expandtabs(2))
+	print(txt.expandtabs(4))
+	print(txt.expandtabs(10))
+	
+# Searches the string for a specified value and returns the position of where it was found
+snippet .find
+	.find()
+# An example for using find
+snippet string.find=>_1
+	txt = 'Hello, welcome to my world.'
+	
+	x = txt.find('welcome')
+	
+	print(x)
+	
+# An example for using find
+snippet string.find=>_2
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.find('e')
+	
+	print(x)
+	
+# An example for using find
+snippet string.find=>_3
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.find('e', 5, 10)
+	
+	print(x)
+	
+# An example for using find
+snippet string.find=>_4
+	txt = 'Hello, And Welcome To My World!'
+	
+	print(txt.find('q'))
+	print(txt.index('q'))
+	
+# An example for using format
+snippet string.format=>
+	# default arguments
+	print('Hello {}, your balance is {}.'.format('Adam', 230.2346))
+	
+	# positional arguments
+	print('Hello {0}, your balance is {1}.'.format('Adam', 230.2346))
+	
+	# keyword arguments
+	print('Hello {name}, your balance is {blc}.'.format(name='Adam', blc=230.2346))
+	
+	# mixed arguments
+	print('Hello {0}, your balance is {blc}.'.format('Adam', blc=230.2346))
+	
+# Formats specified values in a string
+snippet .format_map
+	.format_map()
+# An example for using format_map
+snippet string.format_map=>
+	point = {'x':4,'y':-5}
+	print('{x} {y}'.format_map(point))
+	
+	point = {'x':4,'y':-5, 'z': 0}
+	print('{x} {y} {z}'.format_map(point))
+	
+# Searches the tuple for a specified value and returns the position of where it was found
+snippet .index
+	.index(value)
+# An example for using index
+snippet string.index=>_1
+	txt = 'Hello, welcome to my world.'
+	
+	x = txt.index('welcome')
+	
+	print(x)
+	
+# An example for using index
+snippet string.index=>_2
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.index('e')
+	
+	print(x)
+	
+# An example for using index
+snippet string.index=>_3
+	txt = 'Hello, And Welcome To My World!'
+	
+	x = txt.index('e', 5, 10)
+	
+	print(x)
+	
+# An example for using index
+snippet string.index=>_4
+	txt = 'Hello, And Welcome To My World!'
+	
+	print(txt.find('q'))
+	print(txt.index('q'))
+	
+# Returns True if all characters in the string are alphanumeric
+snippet .isalnum
+	.isalnum()
+# An example for using isalnum
+snippet string.isalnum=>
+	txt = 'Company 12'
+	x = txt.isalnum()
+	print(x)
+	
+# Returns True if all characters in the string are in the alphabet
+snippet .isalpha
+	.isalpha()
+# An example for using isalpha
+snippet string.isalpha=>
+	txt = 'Company10'
+	x = txt.isalpha()
+	print(x)
+	
+# Returns True if all characters in the string are decimals
+snippet .isdecimal
+	.isdecimal()
+# An example for using isdecimal
+snippet string.isdecimal=>
+	a = '0' #unicode for 0
+	b = 'G' #unicode for G
+	print(a.isdecimal())
+	print(b.isdecimal())
+	
+# Returns True if all characters in the string are digits
+snippet .isdigit
+	.isdigit()
+# An example for using isdigit
+snippet string.isdigit=>
+	a = '0' #unicode for 0
+	b = '²' #unicode for ²
+	print(a.isdigit())
+	print(b.isdigit())
+	
+# Returns True if the string is an identifier
+snippet .isidentifier
+	.isidentifier()
+# An example for using isidentifier
+snippet string.isidentifier=>
+	a = 'MyFolder'
+	b = 'Demo002'
+	c = '2bring'
+	d = 'my demo'
+	print(a.isidentifier())
+	print(b.isidentifier())
+	print(c.isidentifier())
+	print(d.isidentifier())
+	
+# Returns True if all characters in the string are lower case
+snippet .islower
+	.islower()
+# An example for using islower
+snippet string.islower=>
+	a = 'Hello world!'
+	b = 'hello 123'
+	c = 'mynameisPeter'
+	print(a.islower())
+	print(b.islower())
+	print(c.islower())
+	
+# Returns True if all characters in the string are numeric
+snippet .isnumeric
+	.isnumeric()
+# An example for using isnumeric
+snippet string.isnumeric=>
+	a = '0' #unicode for 0
+	b = '²' #unicode for &sup2;
+	c = '10km2'
+	print(a.isnumeric())
+	print(b.isnumeric())
+	print(c.isnumeric())
+	
+# Returns True if all characters in the string are printable
+snippet .isprintable
+	.isprintable()
+# An example for using isprintable
+snippet string.isprintable=>
+	txt = 'Hello!
+Are you #1?'
+	x = txt.isprintable()
+	print(x)
+	
+# Returns True if all characters in the string are whitespaces
+snippet .isspace
+	.isspace()
+# An example for using isspace
+snippet string.isspace=>
+	txt = '   s   '
+	x = txt.isspace()
+	print(x)
+	
+# Returns True if the string follows the rules of a title
+snippet .istitle
+	.istitle()
+# An example for using istitle
+snippet string.istitle=>
+	a = 'HELLO, AND WELCOME TO MY WORLD'
+	b = 'Hello'
+	c = '22 Names'
+	d = 'This Is %'!?'
+	print(a.istitle())
+	print(b.istitle())
+	print(c.istitle())
+	print(d.istitle())
+	
+# Returns True if all characters in the string are upper case
+snippet .isupper
+	.isupper()
+# An example for using isupper
+snippet string.isupper=>
+	a = 'Hello World!'
+	b = 'hello 123'
+	c = 'MY NAME IS PETER'
+	print(a.isupper())
+	print(b.isupper())
+	print(c.isupper())
+	
+# Joins the elements of an iterable to the end of the string
+snippet .join
+	.join()
+# An example for using join
+snippet string.join=>
+	myDict = {'name': 'John', 'country': 'Norway'}
+	mySeparator = 'TEST'
+	x = mySeparator.join(myDict)
+	print(x)
+	
+# Returns a left justified version of the string
+snippet .ljust
+	.ljust()
+# An example for using ljust
+snippet string.ljust=>
+	txt = 'banana'
+	x = txt.ljust(20, 'O')
+	print(x)
+	
+# Converts a string into lower case
+snippet .lower
+	.lower()
+# An example for using lower
+snippet string.lower=>
+	txt = 'Hello my FRIENDS'
+	x = txt.lower()
+	print(x)
+	
+# Returns a left trim version of the string
+snippet .lstrip
+	.lstrip()
+# An example for using lstrip
+snippet string.lstrip=>
+	txt = ',,,,,ssaaww.....banana'
+	x = txt.lstrip(',.asw')
+	print(x)
+	
+# Returns a translation table to be used in translations
+snippet .maketrans
+	.maketrans()
+# An example for using maketrans
+snippet string.maketrans=>
+	# example dictionary
+	dict = {97: '123', 98: '456', 99: '789'}
+	string = 'abc'
+	print(string.maketrans(dict))
+	
+# Returns a tuple where the string is parted into three parts
+snippet .partition
+	.partition()
+# An example for using partition
+snippet string.partition=>
+	txt = 'I could eat bananas all day'
+	x = txt.partition('apples')
+	print(x)
+	
+# Returns a string where a specified value is replaced with a specified value
+snippet .replace
+	.replace(x, y)
+# An example for using replace
+snippet string.replace=>
+	txt = 'one one was a race horse, two two was one too.'
+	x = txt.replace('one', 'three', 2)
+	print(x)
+	
+# Searches the string for a specified value and returns the last position of where it was found
+snippet .rfind
+	.rfind()
+# An example for using rfind
+snippet string.rfind=>
+	txt = 'Hello, welcome to my world.'
+	print(txt.rfind('q'))
+	print(txt.rindex('q'))
+	
+# Searches the string for a specified value and returns the last position of where it was found
+snippet .rindex
+	.rindex()
+# An example for using rindex
+snippet string.rindex=>
+	txt = 'Hello, welcome to my world.'
+	print(txt.rfind('q'))
+	print(txt.rindex('q'))
+	
+# Returns a tuple where the string is parted into three parts
+snippet .rpartition
+	.rpartition()
+# An example for using rpartition
+snippet string.rpartition=>
+	txt = 'I could eat bananas all day, bananas are my favorite fruit'
+	x = txt.rpartition('apples')
+	print(x)
+	
+# Returns a right trim version of the string
+snippet .rsplit
+	.rsplit()
+# An example for using rsplit
+snippet string.rsplit=>
+	txt = 'banana,,,,,ssaaww.....'
+	x = txt.rstrip(',.asw')
+	print(x)
+	
+# Splits the string at the specified separator, and returns a list
+snippet .split
+	.split()
+# An example for using split
+snippet string.split=>
+	txt = 'apple#banana#cherry#orange'
+	# setting the max parameter to 1, will return a list with 2 elements!
+	x = txt.split('#', 1)
+	print(x)
+	
+# Splits the string at line breaks and returns a list
+snippet .splitlines
+	.splitlines()
+# An example for using splitlines
+snippet string.splitlines=>
+	txt = 'Thank you for the music
+Welcome to the jungle'
+	x = txt.splitlines(True)
+	print(x)
+	
+# Returns true if the string starts with the specified value
+snippet .startswith
+	.startswith()
+# An example for using startswith
+snippet string.startswith=>
+	txt = 'Hello, welcome to my world.'
+	x = txt.startswith('wel', 7, 20)
+	print(x)
+	
+# Swaps cases, lower case becomes upper case and vice versa
+snippet .swapcase
+	.swapcase()
+# An example for using swapcase
+snippet string.swapcase=>
+	txt = 'Hello My Name Is PETER'
+	x = txt.swapcase()
+	print(x)
+	
+# Converts the first character of each word to upper case
+snippet .title
+	.title()
+# An example for using title
+snippet string.title=>
+	txt = 'hello b2b2b2 and 3g3g3g'
+	x = txt.title()
+	print(x)
+	
+# Returns a translated string
+snippet .translate
+	.translate()
+# An example for using translate
+snippet string.translate=>
+	# translation table - a dictionary
+	translation = {97: None, 98: None, 99: 105}
+	
+	string = 'abcdef'
+	print('Original string:', string)
+	
+	# translate string
+	print('Translated string:', string.translate(translation))
+	
+# Converts a string into upper case
+snippet .upper
+	.upper()
+# An example for using upper
+snippet string.upper=>
+	txt = 'Hello my friends'
+	x = txt.upper()
+	print(x)
+	
+# Fills the string with a specified number of 0 values at the beginning
+snippet .zfill
+	.zfill()
+# An example for using zfill
+snippet string.zfill=>
+	txt = '50'
+	x = txt.zfill(10)
+	print(x)
+	
+# Adds an element at the end of the list
+snippet .append
+	.append()
+# An example for using append
+snippet list.append=>
+	a = ['apple', 'banana', 'cherry']
+	b = ['Ford', 'BMW', 'Volvo']
+	a.append(b)
+	print(a)
+	
+# Removes all the elements from the set
+snippet .clear
+	.clear()
+# An example for using clear
+snippet list.clear=>
+	fruits = ['apple', 'banana', 'cherry']
+	fruits.clear()
+	print(fruits)
+	
+# Returns a copy of the set
+snippet .copy
+	.copy()
+# An example for using copy
+snippet list.copy=>
+	fruits = ['apple', 'banana', 'cherry']
+	x = fruits.copy()
+	print(x)
+	
+# Returns the number of elements with the specified value
+snippet .count
+	.count
+# An example for using count
+snippet list.count=>
+	fruits = [1, 4, 2, 9, 7, 8, 9, 3, 1]
+	x = fruits.count(9)
+	print(x)
+	
+# Add the elements of a list (or any iterable), to the end of the current list
+snippet .extend
+	.extend()
+# An example for using extend
+snippet list.extend=>
+	fruits = ['apple', 'banana', 'cherry']
+	points = (1, 4, 5, 9)
+	fruits.extend(points)
+	print(fruits)
+	
+# An example for using index
+snippet list.index=>
+	fruits = [4, 55, 64, 32, 16, 32]
+	x = fruits.index(32)
+	print(x)
+	
+# Adds an element at the specified position
+snippet .insert
+	.insert()
+# An example for using insert
+snippet list.insert=>
+	fruits = ['apple', 'banana', 'cherry']
+	x = fruits.insert(1, 'orange')
+	print(x)
+	
+# Removes the specified element
+snippet .pop
+	.pop()
+# An example for using pop
+snippet list.pop=>
+	fruits = ['apple', 'banana', 'cherry']
+	fruits.pop(1)
+	print(fruits)
+	
+# Removes the specified element
+snippet .remove
+	.remove()
+# An example for using remove
+snippet list.remove=>
+	fruits = ['apple', 'banana', 'cherry']
+	fruits.remove('banana')
+	print(fruits)
+	
+# Reverses the order of the list
+snippet .reverse
+	.reverse()
+# An example for using reverse
+snippet list.reverse=>
+	fruits = ['apple', 'banana', 'cherry']
+	fruits.reverse()
+	print(fruits)
+	
+# Sorts the list
+snippet .sort
+	.sort()
+# An example for using sort
+snippet list.sort=>
+	# A function that returns the length of the value:
+	def myFunc(e):
+	  return len(e)
+	cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
+	cars.sort(reverse=True, key=myFunc)
+	print(cars)
+	
+# List Comprehensions
+snippet comp=>
+	[ expression for item in list if conditional ]
+# An example for using list comprehension
+snippet list.comp=>_1
+	x = [i for i in range(10)]
+	print(x)
+	
+# An example for using list comprehension
+snippet list.comp=>_2
+	x = [x**2 for x in range(10)]
+	print(x)
+	
+# An example for using list comprehension
+snippet list.comp=>_3
+	list1 = [3,4,5]
+	multiplied = [item*3 for item in list1]
+	print(multiplied)
+	
+# An example for using list comprehension
+snippet list.comp=>_4
+	listOfWords = ['this','is','a','list','of','words']
+	items = [ word[0] for word in listOfWords ]
+	print(items)
+	
+# An example for using list comprehension
+snippet list.comp=>_5
+	x = [double(x) for x in range(10) if x%2==0]
+	print(x)
+	
+# An example for using clear
+snippet dictionary.clear=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	car.clear()
+	print(car)
+	
+# An example for using copy
+snippet dictionary.copy=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	x = car.copy()
+	print(x)
+	
+# Returns a dictionary with the specified keys and values
+snippet .fromkeys
+	.fromkeys(x, y)
+# An example for using fromkeys
+snippet dictionary.fromkeys=>
+	x = ('key1', 'key2', 'key3')
+	thisdict = dict.fromkeys(x)
+	print(thisdict)
+	
+# Returns the value of the specified key
+snippet .get
+	.get()
+# An example for using get
+snippet dictionary.get=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	x = car.get('price', 15000)
+	print(x)
+	
+# Returns a list containing the a tuple for each key value pair
+snippet .items
+	.items()
+# An example for using items
+snippet dictionary.items=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	x = car.items()
+	car['year'] = 2018
+	print(x)
+	
+# Returns a list containing the dictionary's keys
+snippet .keys
+	.keys()
+# An example for using keys
+snippet dictionary.keys=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	x = car.keys()
+	car['color'] = 'white'
+	print(x)
+	
+# An example for using pop
+snippet dictionary.pop=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	car.pop('model')
+	print(car)
+	
+# Removes the last inserted key-value pai
+snippet .popitem
+	.popitem()
+# An example for using popitem
+snippet dictionary.popitem=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	car.popitem()
+	print(car)
+	
+# Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+snippet .setdefault
+	.setdefault()
+# An example for using setdefault
+snippet dictionary.setdefault=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	x = car.setdefault('color', 'white')
+	print(x)
+	
+# Update the set with the union of this set and others
+snippet .update
+	x.update(y)
+# An example for using update
+snippet dictionary.update=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	car.update({'color': 'White'})
+	print(car)
+	
+# Returns a list of all the values in the dictionary
+snippet .values
+	.values()
+# An example for using values
+snippet dictionary.values=>
+	car = {
+	  'brand': 'Ford',
+	  'model': 'Mustang',
+	  'year': 1964
+	}
+	x = car.values()
+	car['year'] = 2018
+	print(x)
+	
+# Returns the number of times a specified value occurs in a tuple
+snippet .count
+	.count(value)
+# An example for using count
+snippet tuple.count=>
+	thistuple = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
+	x = thistuple.count(5)
+	print(x)
+	
+# An example for using index
+snippet tuple.index=>
+	thistuple = (1, 3, 7, 8, 7, 5, 4, 6, 8, 5)
+	x = thistuple.index(8)
+	print(x)
+	
+# Adds an element to the set
+snippet .add
+	.add()
+# An example for using add
+snippet sets.add=>
+	fruits = {'apple', 'banana', 'cherry'}
+	fruits.add('orange') 
+	print(fruits)
+	
+# An example for using clear
+snippet sets.clear=>
+	fruits = {'apple', 'banana', 'cherry'}
+	fruits.clear()
+	print(fruits)
+	
+# An example for using copy
+snippet sets.copy=>
+	fruits = {'apple', 'banana', 'cherry'}
+	x = fruits.copy()
+	print(x)
+	
+# Returns a set containing the difference between two or more sets
+snippet .difference
+	x.difference(y)
+# An example for using difference
+snippet sets.difference=>_1
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	z = x.difference(y)
+	print(z)
+	
+# An example for using difference
+snippet sets.difference=>_2
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	z = y.difference(x) 
+	print(z)
+	
+# Removes the items in this set that are also included in another, specified set
+snippet .difference_update
+	x.difference_update(y)
+# An example for using difference_update
+snippet sets.difference_update=>
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	x.difference_update(y)
+	print(x)
+	
+# Remove the specified item
+snippet .discard
+	.discard()
+# An example for using discard
+snippet sets.discard=>
+	fruits = {'apple', 'banana', 'cherry'}
+	fruits.discard('banana') 
+	print(fruits)
+	
+# Returns a set, that is the intersection of two other sets
+snippet .intersection
+	x.intersection(y)
+# An example for using intersection
+snippet sets.intersection=>_1
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	z = x.intersection(y)
+	print(z)
+	
+# An example for using intersection
+snippet sets.intersection=>_2
+	x = {'a', 'b', 'c'}
+	y = {'c', 'd', 'e'}
+	z = {'f', 'g', 'c'}
+	result = x.intersection(y, z)
+	print(result)
+	
+# Removes the items in this set that are not present in other, specified set(s)
+snippet .intersection_update
+	x.intersection_update(y)
+# An example for using intersection_update
+snippet sets.intersection_update=>_1
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	x.intersection_update(y)
+	print(x)
+	
+# An example for using intersection_update
+snippet sets.intersection_update=>_2
+	x = {'a', 'b', 'c'}
+	y = {'c', 'd', 'e'}
+	z = {'f', 'g', 'c'}
+	x.intersection_update(y, z)
+	print(x)
+	
+# Returns whether two sets have a intersection or not
+snippet .isdisjoint
+	x.isdisjoint(y)
+# An example for using isdisjoint
+snippet sets.isdisjoint=>_1
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'facebook'}
+	z = 
+	print(z)
+	
+# An example for using isdisjoint
+snippet sets.isdisjoint=>_2
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	z = x.isdisjoint(y) 
+	print(z)
+	
+# Returns whether another set contains this set or not
+snippet .issubset
+	x.issubset(y)
+# An example for using issubset
+snippet sets.sets.issubset=>_1
+	x = {'a', 'b', 'c'}
+	y = {'f', 'e', 'd', 'c', 'b', 'a'}
+	z = x.issubset(y) 
+	print(z)
+	
+# An example for using issubset
+snippet sets.issubset=>_2
+	x = {'a', 'b', 'c'}
+	y = {'f', 'e', 'd', 'c', 'b'}
+	z = x.issubset(y) 
+	print(z)
+	
+# Returns whether this set contains another set or not
+snippet .issuperset
+	x.issuperset(y)
+# An example for using issuperset
+snippet sets.issuperset=>_1
+	x = {'f', 'e', 'd', 'c', 'b', 'a'}
+	y = {'a', 'b', 'c'}
+	z = x.issuperset(y) 
+	print(z)
+	
+# An example for using issuperset
+snippet sets.issuperset=>_2
+	x = {'f', 'e', 'd', 'c', 'b'}
+	y = {'a', 'b', 'c'}
+	z = x.issuperset(y) 
+	print(z)
+	
+# An example for using pop
+snippet sets.pop=>
+	fruits = {'apple', 'banana', 'cherry'}
+	fruits.pop() 
+	print(fruits)
+	
+# An example for using remove
+snippet sets.remove=>
+	fruits = {'apple', 'banana', 'cherry'}
+	fruits.remove('banana') 
+	print(fruits)
+	
+# Returns a set with the symmetric differences of two sets
+snippet .symmetric_difference
+	x.symmetric_difference(y)
+# An example for using symmetric_difference
+snippet sets.symmetric_difference=>
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	z = x.symmetric_difference(y) 
+	print(z)
+	
+# inserts the symmetric differences from this set and another
+snippet .symmetric_difference_update
+	x.symmetric_difference_update(y)
+# An example for using symmetric_difference_update
+snippet sets.symmetric_difference_update=>
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	x.symmetric_difference_update(y) 
+	print(x)
+	
+# Return a set containing the union of sets
+snippet .union
+	x.union(y)
+# An example for using union
+snippet sets.union=>_1
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	z = x.union(y) 
+	print(z)
+	
+# An example for using union
+snippet sets.union=>_2
+	x = {'a', 'b', 'c'}
+	y = {'f', 'd', 'a'}
+	z = {'c', 'd', 'e'}
+	result = x.union(y, z) 
+	print(result)
+	
+# An example for using update
+snippet sets.update=>
+	x = {'apple', 'banana', 'cherry'}
+	y = {'google', 'microsoft', 'apple'}
+	x.update(y) 
+	print(x)
+	
+# python class
+snippet class=>
+	class MyClass:
+	  pass
+	
+# __init__ method
+snippet __init__=>
+	def __init__(self, name, age):
+	  self.name = name
+	  self.age = age
+	
+# __iter__ method
+snippet __iter__=>
+	def __iter__(self):
+	  self.a = 1
+	  return self
+	
+# __next__ method
+snippet __next__=>
+	def __next__(self):
+	  x = self.a
+	  self.a += 1
+	  return x
+	
+# import module
+snippet import=>
+	import mymodule as mx
+# tryexcept method
+snippet trye=>
+	try:
+	  print(x)
+	except:
+	  print('An exception occurred')
+	
+# tryexceptfinally method
+snippet tryef=>
+	try:
+	  print(x)
+	except:
+	  print('Something went wrong')
+	finally:
+	  print('The try except is finished')
+	
+# open a file
+snippet file=>openFile
+	f = open('demofile.txt', 'r')
+	print(f.read())
+	
+# Read one line of the file
+snippet file=>openFileReadLine
+	f = open('demofile.txt', 'r')
+	print(f.readline())
+	
+# Write to an Existing File
+snippet file=>writeExistFile
+	f = open('demofile.txt', 'a')
+	f.write('Now the file has one more line!')
+	
+# Open a file and overwrite the content
+snippet file=>writeOwerWrite
+	f = open('demofile.txt', 'w')
+	f.write('Woops! I have deleted the content!')
+	
+# Create a new file if it does not exist
+snippet file=>createFileIfDoesNotExist
+	f = open('myfile.txt', 'w')
+# Create a new file
+snippet file=>createFile
+	f = open('myfile.txt', 'x')
+# delete a file
+snippet file=>deleteFile
+	#import os
+	os.remove('demofile.txt')
+	
+# oop inheritance example
+snippet class=>_1
+	class Person:
+	    pass  # An empty block
+	p = Person()
+	print(p)
+	
+# oop inheritance example
+snippet class=>inheritance_1
+	class Bird:
+	
+	   def __init__(self):
+	     print('Bird is ready')
+	
+	   def whoisThis(self):
+	     print('Bird')
+	
+	   def swim(self):
+	     print('Swim faster')
+	
+	# child class
+	class Penguin(Bird):
+	
+	   def __init__(self):
+	     # call super() function
+	     super().__init__()
+	     print('Penguin is ready')
+	
+	   def whoisThis(self):
+	     print('Penguin')
+	
+	   def run(self):
+	     print('Run faster')
+	
+	peggy = Penguin()
+	peggy.whoisThis()
+	peggy.swim()
+	peggy.run()
+	
+# oop inheritance example
+snippet class=>inheritance_2
+	class SchoolMember:
+	    '''Represents any school member.'''
+	    def __init__(self, name, age):
+	        self.name = name
+	        self.age = age
+	        print('(Initialized SchoolMember: {})'.format(self.name))
+	    def tell(self):
+	        '''Tell my details.'''
+	        print('Name:{} Age:{}'.format(self.name, self.age), end=' ')
+	class Teacher(SchoolMember):
+	    '''Represents a teacher.'''
+	    def __init__(self, name, age, salary):
+	        SchoolMember.__init__(self, name, age)
+	        self.salary = salary
+	        print('(Initialized Teacher: {})'.format(self.name))
+	    def tell(self):
+	        SchoolMember.tell(self)
+	        print('Salary: {:d}'.format(self.salary))
+	class Student(SchoolMember):
+	    '''Represents a student.'''
+	    def __init__(self, name, age, marks):
+	        SchoolMember.__init__(self, name, age)
+	        self.marks = marks
+	        print('(Initialized Student: {})'.format(self.name))
+	    def tell(self):
+	        SchoolMember.tell(self)
+	        print('Marks: {:d}'.format(self.marks))
+	t = Teacher('Mrs. Shrividya', 40, 30000)
+	s = Student('Swaroop', 25, 75)
+	# prints a blank line
+	print()
+	members = [t, s]
+	for member in members:
+	    # Works for both Teachers and Students
+	    member.tell()
+	
+# class with attribute example
+snippet class=>with_attribute_1
+	class Parrot:
+	
+	# class attribute
+	 species = 'bird'
+	
+	# instance attribute
+	 def __init__(self, name, age):
+	    self.name = name
+	    self.age = age
+	
+	# instantiate the Parrot class
+	blu = Parrot('Blu', 10)
+	woo = Parrot('woo', 15)
+	
+	# access the class attributes
+	print('Blu is a {}'.format(blu.__class__.species))
+	print('Woo is also a {}'.format(woo.__class__.species))
+	# access the instance attributes
+	print('{} is {} years old'.format( blu.name, blu.age))
+	print('{} is {} years old'.format( woo.name, woo.age))
+	
+# class with attribute example
+snippet class=>with_attribute_2
+	class Person:
+	    def __init__(self, name):
+	        self.name = name
+	    def say_hi(self):
+	        print('Hello, my name is', self.name)
+	p = Person('Swaroop')
+	p.say_hi()
+	# The previous 2 lines can also be written as
+	# Person('Swaroop').say_hi()
+	
+# class with attribute example
+snippet class=>with_attribute_3
+	class Robot:
+	    '''Represents a robot, with a name.'''
+	    # A class variable, counting the number of robots
+	    population = 0
+	    def __init__(self, name):
+	        '''Initializes the data.'''
+	        self.name = name
+	        print('(Initializing {})'.format(self.name))
+	        # When this person is created, the robot
+	        # adds to the population
+	        Robot.population += 1
+	    def die(self):
+	        '''I am dying.'''
+	        print('{} is being destroyed!'.format(self.name))
+	        Robot.population -= 1
+	        if Robot.population == 0:
+	            print('{} was the last one.'.format(self.name))
+	        else:
+	            print('There are still {:d} robots working.'.format(
+	                Robot.population))
+	    def say_hi(self):
+	        '''Greeting by the robot.
+	        Yeah, they can do that.'''
+	        print('Greetings, my masters call me {}.'.format(self.name))
+	    @classmethod
+	    def how_many(cls):
+	        '''Prints the current population.'''
+	        print('We have {:d} robots.'.format(cls.population))
+	droid1 = Robot('R2-D2')
+	droid1.say_hi()
+	Robot.how_many()
+	droid2 = Robot('C-3PO')
+	droid2.say_hi()
+	Robot.how_many()
+	print('Robots can do some work here.')
+	print('Robots have finished their work. So lets destroy them.')
+	droid1.die()
+	droid2.die()
+	Robot.how_many()
+	
+# class with method example
+snippet class=>with_method_1
+	class Parrot:
+	
+	# instance attributes
+	 def __init__(self, name, age):
+	   self.name = name
+	   self.age = age
+	
+	# instance method
+	 def sing(self, song):
+	   return '{} sings {}'.format(self.name, song)
+	
+	 def dance(self):
+	   return '{} is now dancing'.format(self.name)
+	
+	# instantiate the object
+	blu = Parrot('Blu', 10)
+	# call our instance methods
+	print(blu.sing('Happy'))
+	print(blu.dance())
+	
+# class with method example
+snippet class=>with_method_2
+	class Person:
+	    def say_hi(self):
+	        print('Hello, how are you?')
+	p = Person()
+	p.say_hi()
+	# The previous 2 lines can also be written as
+	# Person().say_hi()
+	
+# class encapsulation example
+snippet class=>encapsulation
+	class Computer:
+	
+	 def __init__(self):
+	   self.__maxprice = 900
+	
+	 def sell(self):
+	   print('Selling Price: {}'.format(self.__maxprice))
+	
+	 def setMaxPrice(self, price):
+	   self.__maxprice = price
+	
+	c = Computer()
+	c.sell()
+	
+	# change the price
+	c.__maxprice = 1000
+	c.sell()
+	
+	# using setter function
+	c.setMaxPrice(1000)
+	c.sell()
+	
+# class polymorphism example
+snippet class=>polymorphism
+	class Parrot:
+	
+	 def fly(self):
+	   print('Parrot can fly')
+	
+	 def swim(self):
+	   print('Parrot can not swim')
+	
+	class Penguin:
+	
+	 def fly(self):
+	   print('Penguin can not fly')
+	
+	 def swim(self):
+	   print('Penguin can swim')
+	
+	# common interface
+	def flying_test(bird):
+	  bird.fly()
+	
+	#instantiate objects
+	blu = Parrot()
+	peggy = Penguin()
+	
+	# passing the object
+	flying_test(blu)
+	flying_test(peggy)
+	
