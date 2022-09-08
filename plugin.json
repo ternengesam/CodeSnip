@@ -1,0 +1,23 @@
+{
+    "id": "acode.plugin.codesnip",
+    "name": "CodeSnip",
+    "main": "dist/index.js",
+    "version": "1.0.0",
+    "readme": "readme.md",
+    "icon": "icon.png",
+    "files": [
+        "dist/index.js",
+        "dist/install.js",
+        "dist/setup.js",
+        "dist/sources.js",
+        "dist/utils/cleanup.js",
+        "dist/utils/formatter.js",
+        "dist/utils/generate.js",
+        "dist/utils/getsource.js",
+        "dist/utils/parsebody.js"
+    ],"author": {
+        "name": "Ternenge",
+        "email": "samuelternenge01@gmail.com",
+        "github": "https://github.com/3eagle.git"
+    }
+}

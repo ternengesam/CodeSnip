@@ -1,1 +1,0 @@
-const url = "https://raw.githubusercontent.com/walteribeiro/full-react-snippets/master/snippets/snippets.json"

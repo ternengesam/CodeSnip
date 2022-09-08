@@ -1,0 +1,111 @@
+# Flask expresion
+snippet fexp
+	{{ ${1:foo.bar} }}$0
+# Flask filter
+snippet ffilter
+	{{ ${1:foo.bar}|${2:filter} }}$0
+# Flask comment
+snippet fcomment
+	{# 
+	${1:comment} 
+	#}$0
+# Flask block
+snippet fblock
+	{% ${1:block} ${2:foo} %}$3{% end${1:block} %}
+	$0
+# Flask extends
+snippet fextends
+	{% extends ${1:layout_template} %}
+	
+	$0
+# Flask self
+snippet fself
+	{{ self.${1:block_name}() }}$0
+# Flask super
+snippet fsuper
+	{{ self.supper() }}$0
+# Flask for
+snippet ffor
+	{% for ${1:element} in ${2:collection} %}
+		$3{{ ${1:element}|e }}$4
+	{% endfor %}
+	$0
+# Flask if
+snippet fif
+	{% if ${1:expression} %}
+		${2:blockofcode}
+	{% endif %}
+	$0
+# Flask ife
+snippet fife
+	{% if ${1:expression} %}
+		${2:blockofcode}
+	{% else %}
+		${3:blockofcode}
+	{% endif %}
+	$0
+# Flask elif
+snippet felif
+	{% if ${1:expression} %}
+		${2:blockofcode}
+	{% elif ${3:expression2} %}
+		${4:blockofcode}
+	{% else %}
+		${5:blockofcode}
+	{% endif %}
+	$0
+# Flask macro
+snippet fmacro
+	{% macro ${1:expression} -%}
+		${2:blockofcode}
+	{%- endmacro %}$0
+# Flask filter block
+snippet ffb
+	{% filter ${1:foo} %}
+		${2:blockofcode}
+	{% endfilter %}$0
+# Flask set
+snippet fset
+	{% set ${1:expression} %}$0
+# Flask include
+snippet finclude
+	{% include "${1:template}" %}$0
+# Flask import
+snippet fimport
+	{% import "${1:template}" as ${2:alias} %}
+	$0
+# flask from import
+snippet ffrom
+	{% from '${1:template}.html' import ${2:object} %}
+	$3
+# Flask autoescape
+snippet fautoescape
+	{% autoescape ${1:true} %}
+		${2:blockofcode}
+	{% endautoescape %}
+	$0
+# Flask url
+snippet furl
+	{{ url_for("${1:template}") }}$0
+# Flask title
+snippet ftitle
+	{% block title %}
+	${1:name}
+	{% endblock %}
+# Flask var
+snippet fvar
+	{{${1:Name var}}}
+# Flask content block
+snippet fcontent
+	{% block content %}
+	${1:Some content}
+	{% endblock %}
+t feh
+	@app.errorhandler(${1:404})
+	def ${2:bar}(error):
+	    return render_template('${3:error.html}'), ${1:404}
+	$0
+# Flask logging
+snippet flog
+	app.logger.${1:debug}("${2:A message}")
+	$0

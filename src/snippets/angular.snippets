@@ -1,0 +1,503 @@
+# Angular [class] binding
+snippet a-class
+	[class]="${1:expression}"
+	
+# Angular [style] binding
+snippet a-style
+	[style.${1:property}]="${2:expression}"
+	
+# Angular ngClass
+snippet a-ngClass
+	[ngClass]="{${1:cssClass}: ${2:expression}}"
+	
+# Angular *ngFor
+snippet a-ngFor
+	*ngFor="let ${1:item} of ${2:list}"${0}
+	
+# Angular *ngFor with trackBy
+snippet a-ngFor-trackBy
+	*ngFor="let ${1:item} of ${2:list}; trackBy:${1:item}.id"${0}
+	
+# Angular *ngForAsync
+snippet a-ngForAsync
+	*ngFor="let ${1:item} of ${2:stream} | async as ${3:list}"${0}
+	
+# Form with ngSubmit and form attributes
+snippet a-form
+	<form (ngSubmit)="onSubmit()" #${1:form}="ngForm">
+	</form>
+	
+# Angular formArrayName
+snippet a-formArrayName
+	formArrayName="${1:control}"
+	
+# Angular formControlName
+snippet a-formControlName
+	formControlName="${1:control}"
+	
+# Angular formGroup
+snippet a-formGroup
+	[formGroup]="${1:form}"
+	
+# Angular formGroupName
+snippet a-formGroupName
+	[formGroupName]="${1:name}"
+	
+# Angular form submit
+snippet a-form-submit
+	<button type="submit" [disabled]="!${1:form}.form.valid">
+		Save
+	</button>
+	
+# Angular *ngIf
+snippet a-ngIf
+	*ngIf="${1:expression}"
+	
+# Angular *ngIfElse
+snippet a-ngIfElse
+	*ngIf="${1:expression};else ${2:templateName}"
+	
+# Angular ngModel
+snippet a-ngModel
+	[(ngModel)]="${1:binding}"
+	
+# Angular routerLink
+snippet a-routerLink
+	[routerLink]="['/${1:routePath}']" routerLinkActive="${2:router-link-active}" $0
+	
+# Angular routerLink with a route parameter
+snippet a-routerLink-param
+	[routerLink]="['${1:routePath}', ${2:routeParameterValue}]"
+	routerLinkActive="${3:router-link-active}"$0
+	
+# <select> control with ngModel
+snippet a-select
+	<select [(ngModel)]="${1:model}">
+		<option *ngFor="let ${2:item} of ${3:list}" [value]="${2:item}">{{${2:item}}}</option>
+	</select>
+	
+# Angular ngStyle
+snippet a-ngStyle
+	[ngStyle]="{${1:style}: ${2:expression}}"
+	
+# Angular ngSwitch
+snippet a-ngSwitch
+	<div [ngSwitch]="${1:conditionExpression}">
+		<div *ngSwitchCase="${2:expression}">${3:output}</div>
+		<div *ngSwitchDefault>${4:output2}</div>
+	</div>
+	
+# Angular pre debug | json
+snippet a-prej
+	<pre>{{${1:model} | json}}</pre>$0
+	
+# Angular pre debug | async | json
+snippet a-preja
+	<pre>{{${1:model} | async | json}}</pre>$0
+	
+# Angular ng-container
+snippet a-ng-container
+	<ng-container $0></ng-container>
+	
+# Angular ng-template
+snippet a-ng-template
+	<ng-template [ngTemplateOutlet]="${1:outlet}" [ngOutletContext]="${2:context}"></ng-template>
+	
+# Angular ng-content
+snippet a-ng-content
+	<ng-content select="${0:selector}"></ng-content>
+	
+bservable } from 'rxjs';
+	import { tap } from 'rxjs/operators';
+	
+	@Injectable()
+	export class LogInterceptor implements HttpInterceptor {
+		constructor() {}
+	
+		intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+			const started = Date.now();
+			return next.handle(req).pipe(
+				tap(event => {
+					if (event instanceof HttpResponse) {
+						const elapsed = Date.now() - started;
+						console.log(`Request for \${req.urlWithParams} took \${elapsed} ms.`);
+					}
+				})
+			);
+		}
+	}
+	
+# Angular HttpInterceptor for headers HttpClient
+snippet a-http-interceptor-headers
+	import { Injectable } from '@angular/core';
+	import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+	import { Observable } from 'rxjs';
+	
+	@Injectable()
+	export class HeaderInterceptor implements HttpInterceptor {
+		constructor() {}
+	
+		intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+			const headers = req.headers
+				.set('Content-Type', 'application/json');
+			const authReq = req.clone({ headers });
+			return next.handle(authReq);
+		}
+	}
+	
+# Empty Angular HttpInterceptor for HttpClient
+snippet a-http-interceptor
+	import { Injectable } from '@angular/core';
+	import { HttpInterceptor, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
+	import { Observable } from 'rxjs';
+	
+	@Injectable()
+	export class ${2:Your}Interceptor implements HttpInterceptor {
+		intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+			return next.handle(req);
+		}
+	}
+	
+# Angular @Output event and emitter
+snippet a-output-event
+	@Output() ${1:eventName} = new EventEmitter<${2:eventType}>();
+	
+# Angular observable subscribe
+snippet a-subscribe
+	this.${1:service}.${2:function}
+		.subscribe(${3:arg} => this.${4:property} = ${3:arg});
+	$0
+	
+# Angular App root component
+snippet a-component-root
+	import { Component } from '@angular/core';
+	
+	@Component({
+		selector: '${1:prefix-app}',
+		template: `
+			<router-outlet></router-outlet>
+			`
+	})
+	export class ${2:App}Component { }
+	$0
+	
+# Angular Root Module
+snippet a-module-root
+	import { NgModule } from '@angular/core';
+	import { BrowserModule  } from '@angular/platform-browser';
+	import { HttpModule } from '@angular/http';
+	
+	import { ${1:App}Component } from './${1:app}.component';
+	
+	@NgModule({
+		imports: [
+			BrowserModule,
+			HttpModule,
+		],
+		declarations: [${1:App}Component],
+		bootstrap: [${1:App}Component],
+	})
+	export class ${1:App}Module { }
+	$0
+	
+# Route definitions
+snippet a-routes
+	import { Routes } from '@angular/router';
+	
+	export const routes: Routes = [${0}]
+	
+# Angular Module
+snippet a-module
+	import { NgModule } from '@angular/core';
+	
+	import { ${1:Name}Component } from './${2:name}.component';
+	
+	@NgModule({
+		imports: [],
+		exports: [],
+		declarations: [${1:Name}Component],
+		providers: [],
+	})
+	export class ${1:Name}Module { }
+	$0
+	
+# Angular directive
+snippet a-directive
+	import { Directive } from '@angular/core';
+	
+	@Directive({ selector: '[${1:selector-name}]' })
+	export class ${2:Name}Directive {
+		constructor() { }
+	}
+	
+# Angular CanActivate guard
+snippet a-guard-can-activate
+	import { Injectable } from '@angular/core';
+	import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
+	
+	@Injectable({providedIn: ${1:'root'}})
+	export class ${2:Name}Guard implements CanActivate {
+		constructor() { }
+	
+		canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+			return true;$0
+		}
+	}
+	
+# Angular CanActivateChild guard
+snippet a-guard-can-activate-child
+	import { Injectable } from '@angular/core';
+	import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot } from '@angular/router';
+	
+	@Injectable({providedIn: ${1:'root'}})
+	export class ${2:Name}Guard implements CanActivateChild {
+		constructor() { }
+	
+		canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+			return true;$0
+		}
+	}
+	
+# Angular CanLoad guard
+snippet a-guard-can-load
+	import { Injectable } from '@angular/core';
+	import { CanLoad, Route } from '@angular/router';
+	
+	@Injectable({providedIn: ${1:'root'}})
+	export class ${2:Name}Guard implements CanLoad {
+		constructor() { }
+	
+		canLoad(route: Route) {
+			return true;$0
+		}
+	}
+	
+# Angular CanDeactivate guard
+snippet a-guard-can-deactivate
+	import { Injectable } from '@angular/core';
+	import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
+	import { Observable } from 'rxjs';
+	
+	import { ${2:ComponentName}Component } from './${3:filename}.component';
+	
+	// Consider using this interface for all CanDeactivate guards,
+	// and have your components implement this interface, too.
+	//
+	//   e.g. export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
+	//
+	// export interface CanComponentDeactivate {
+	// canDeactivate: () => any;
+	// }
+	
+	@Injectable({providedIn: ${4:'root'}})
+	export class ${1:Name}Guard implements CanDeactivate<${2:ComponentName}Component> {
+		canDeactivate(
+			component: ${2:ComponentName}Component,
+			currentRoute: ActivatedRouteSnapshot, 
+			currentState: RouterStateSnapshot
+		): Observable<boolean>|Promise<boolean>|boolean {
+			return false;$0
+		}
+	}
+	
+# Angular opt-in preload strategy
+snippet a-preload-opt-in-strategy
+	import { PreloadingStrategy, Route } from '@angular/router';
+	import { Observable, of } from 'rxjs';
+	
+	export class PreloadSelectedModulesList implements PreloadingStrategy {
+		preload(route: Route, load: Function): Observable<any> {
+			return route.data && route.data['${1:preload}'] ? load() : of(null);
+		}
+	}
+	$0
+	
+# Angular network aware preload strategy
+snippet a-preload-network-strategy
+	import { Injectable } from '@angular/core';
+	import { PreloadingStrategy, Route } from '@angular/router';
+	import { Observable, EMPTY } from 'rxjs';
+	
+	// avoid typing issues for now
+	export declare var navigator;
+	
+	@Injectable({ providedIn: 'root' })
+	export class NetworkAwarePreloadStrategy implements PreloadingStrategy {
+		preload(route: Route, load: () => Observable<any>): Observable<any> {
+			return this.hasGoodConnection() ? load() : EMPTY;
+		}
+	
+		hasGoodConnection(): boolean {
+			const conn = navigator.connection;
+			if (conn) {
+				if (conn.saveData) {
+					return false; // save data mode is enabled, so dont preload
+				}
+				const avoidTheseConnections = ['slow-2g', '2g' /* , '3g', '4g' */];
+				const effectiveType = conn.effectiveType || '';
+				if (avoidTheseConnections.includes(effectiveType)) {
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+	
+# Angular Router Events
+snippet a-router-events
+	checkEvents() {
+		this.router.events.subscribe(event => {
+			switch (true) {
+				case event instanceof ${1:eventName}:
+					$0
+					break;
+	
+				default:
+					break;
+			}
+		});
+	}
+	
+# Angular Module SkipSelf constructor
+snippet a-ctor-skip-self
+	constructor( @Optional() @SkipSelf() parentModule: ${1:ModuleName} {
+		if (parentModule) {
+			const msg = `${1:ModuleName} has already been loaded. 
+				Import ${1:ModuleName} once, only, in the root AppModule.`;
+			throw new Error(msg);
+		}
+	}
+	
+# RxJs import
+snippet a-rxjs-import
+	import { ${1:Observable} } from 'rxjs';
+	$0
+	
+# RxJs import
+snippet a-rxjs-operator-import
+	import { ${1:map} } from 'rxjs/operators';
+	$0
+	
+# Angular Resolver
+snippet a-resolver
+	import { Injectable } from '@angular/core';
+	import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+	import { Observable } from 'rxjs';
+	
+	@Injectable({ providedIn: ${1:'root'} })
+	export class ${2:YourResolver} implements Resolve<${3:ObjectToResolve}> {
+		resolve(route: ActivatedRouteSnapshot): Observable<${3:ObjectToResolve}> | Promise<${3:ObjectToResolve}> | ${3:ObjectToResolve} {
+			return ${0};
+		}
+	}
+	
+# NgRx Store Module
+snippet a-ngrx-store-module
+	import { NgModule } from '@angular/core';
+	import { EffectsModule } from '@ngrx/effects';
+	import { StoreModule } from '@ngrx/store';
+	import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+	import { environment } from '../../environments/environment';
+	
+	@NgModule({
+	  imports: [
+	    StoreModule.forRoot({}),
+	    EffectsModule.forRoot([]),
+	    environment.production ? [] : StoreDevtoolsModule.instrument()
+	  ]
+	})
+	export class $1StoreModule {}
+	
+# Creates an NgRx Action
+snippet a-ngrx-create-action
+	export const ${1:action} = createAction('[${2:Source}] ${3:Event}');
+	
+# Creates an NgRx Action with Props
+snippet a-ngrx-create-action-props
+	export const ${1:action} = createAction('[${2:Source}] ${3:Event}', props<{${4:key}: ${5:type}}>());
+	
+# Creates an NgRx Reducer
+snippet a-ngrx-create-reducer
+	const ${1:feature}Reducer = createReducer(
+		initialState,
+		on($1Actions.action, state => ({ ...state, ${2:prop}: ${3:updatedValue} })),
+	);
+	
+	export function reducer(state: State | undefined, action: Action) {
+		return $1Reducer(state, action);
+	}
+	
+# Creates an NgRx Effect
+snippet a-ngrx-create-effect
+	${1:effectName}$ = createEffect(() => {
+		return this.actions$.pipe(
+				ofType(${2:action}),
+				/** An EMPTY observable only emits completion. Replace with your own observable stream */
+				${3:operator}(() => ${4:EMPTY}));
+	});
+	
+# Creates an NgRx Effect Scaffolded for API Call
+snippet a-ngrx-create-effect-api
+	${1:effectName}$ = createEffect(() => {
+		return this.actions$.pipe(
+				ofType(${2:Feature}Actions.${3:action}),
+				${4:operator}(() =>
+					${5:apiSource}.pipe(
+						map(data => $2Actions.$3Success({ data })),
+						catchError(error => of($2Actions.$3Failure({ error }))))
+					),
+		);
+	});
+	
+# Creates an NgRx Selector
+snippet a-ngrx-create-selector
+	export const select${1:Feature}${2:Property} = createSelector(
+		select$1,
+		(state: $1State) => state.${3:property}
+	);
+	
+# Creates an NgRx Selector using props
+snippet a-ngrx-create-selector-props
+	export const select${1:Feature}${2:Property} = createSelector(
+		select$1,
+		(state: $1State, props) => ${3:selectLogic}
+	);
+	
+# Import NgRx Entity Data Module
+snippet a-ngrx-data-entity-data-module-import
+	EntityDataModule.forRoot(${1:entityConfig}),
+	
+# NgRx Data Entity Metadata
+snippet a-ngrx-data-entity-metadata
+	import { EntityMetadataMap } from '@ngrx/data';
+	
+	const entityMetadata: EntityMetadataMap = {
+	  ${1:Model1}: {},${0}
+	};
+	
+	export const entityConfig = {
+	  entityMetadata
+	};
+	
+# NgRx Data Entity Collection Data Service
+snippet a-ngrx-data-entity-collection-data-service
+	import { Injectable } from '@angular/core';
+	import {
+	  EntityCollectionServiceBase,
+	  EntityCollectionServiceElementsFactory
+	} from '@ngrx/data';
+	import { ${1:Model} } from '${2:../core}';
+	
+	@Injectable({ providedIn: ${3:'root'} })
+	export class ${1:Model}Service extends EntityCollectionServiceBase<${1:Model}> {
+	  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+	    super('${1:Model}', serviceElementsFactory);
+	  }
+	}
+	
+# TrackBy Function
+snippet a-trackby
+	${1:trackBy}(index: number, ${2:name}: ${3:model}): ${4:number} {
+	  return ${2:name}${5:.id};$0
+	}
+	

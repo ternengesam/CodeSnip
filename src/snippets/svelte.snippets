@@ -1,0 +1,308 @@
+# add a script to your svelte file
+snippet s-component-format
+	<script>
+		${1:// your script goes here}
+	</script>
+	
+	<style>
+		${2:/* your styles go here */}
+	</style>
+	
+	${3:<!-- markup (zero or more items) goes here -->}
+	
+# add a script to your svelte file
+snippet s-script
+	<script>
+		${1:// your script goes here}
+	</script>
+	
+# add a script with context="module" to your svelte file
+snippet s-script-context
+	<script context="module">
+		${1:// your script goes here}
+	</script>
+	
+# add styles to your svelte file
+snippet s-style
+	<style>
+		${1:/* your styles go here */}
+	</style>
+	
+# basic expression
+snippet s-expression
+	{${1:expression}}
+	
+# html content expression
+snippet s-expression-html
+	{@html ${1:expression}}
+	
+# html content expression
+snippet s-expression-debug
+	{@debug ${1:var1}${2:,var2}}
+	
+# if block
+snippet s-if-block
+	{#if ${1:condition}}
+		${2: <!-- content here -->}
+	{/if}
+	
+# if else block
+snippet s-if-else-block
+	{#if ${1:condition}}
+		${2: <!-- content here -->}
+	{:else}
+		${3: <!-- else content here -->}
+	{/if}
+	
+# else block
+snippet s-else-block
+	{:else}
+		${1: <!-- else content here -->}
+	
+# if else if block
+snippet s-if-else-if-block
+	{#if ${1:condition}}
+		${2: <!-- content here -->}
+	{:else if ${3: otherCondition}}
+		${4: <!-- else if content here -->}
+	{:else}
+		${5: <!-- else content here -->}
+	{/if}
+	
+# else if block
+snippet s-else-if-block
+	{:else if ${1: otherCondition}}
+		${2: <!-- else if content here -->}
+	
+# each block
+snippet s-each-block
+	{#each ${1:items} as ${2:item}}
+		${3: <!-- content here -->}
+	{/each}
+	
+# each else block
+snippet s-each-else-block
+	{#each ${1:items} as ${2:item}}
+		${3: <!-- content here -->}
+	{:else}
+		${4: <!-- empty list -->}
+	{/each}
+	
+# each index block
+snippet s-each-index-block
+	{#each ${1:items} as ${2:item},${3:i}}
+		${4: <!-- content here -->}
+	{/each}
+	
+# each index block
+snippet s-each-key-block
+	{#each ${1:items} as ${2:item},(${3:key})}
+		${4: <!-- content here -->}
+	{/each}
+	
+# each index key block
+snippet s-each-index-key-block
+	{#each ${1:items} as ${2:item},i (${3:key})}
+		${4: <!-- content here -->}
+	{/each}
+	
+# await then block
+snippet s-await-then-block
+	{#await ${1:promise}}
+		<!-- promise is pending -->
+	{:then ${2:value}}
+		<!-- promise was fulfilled -->
+	{/await}
+	
+# then block
+snippet s-then-block
+	{:then ${1:value}}
+		<!-- promise was fulfilled -->
+	
+# await short block
+snippet s-await-short-block
+	{#await ${1:promise} then ${2:value}}
+		<!-- promise was fulfilled -->
+	{/await}
+	
+# await catch block
+snippet s-await-catch-block
+	{#await ${1:promise}}
+		<!-- ${1:promise} is pending -->
+	{:then ${value}}
+		<!-- ${1:promise} was fulfilled -->
+	{:catch error}
+		<!-- ${1:promise} was rejected -->
+	{/await}
+	
+# catch block
+snippet s-catch-block
+	{:catch error}
+		<!-- promise was rejected -->
+	
+# on event
+snippet s-on-event
+	on:${1:eventname}={${2:handler}}
+	
+# on event foward
+snippet s-on-event-foward
+	on:${1:eventname}
+	
+# on event w/ modifiers
+snippet s-on-event-modifiers
+	on:${1:eventname}|${2|preventDefault,stopPropagation,passive,capture,once|}={${3:handler}}
+	
+# on event inline
+snippet s-on-event-inline
+	on:${1:click}="{() => ${2:count += 1}}"
+	
+# modifier
+snippet s-modifier
+	|${1|preventDefault,stopPropagation,passive,capture,once|}
+	
+# bind property
+snippet s-bind
+	bind:${1:property}
+	
+# bind property
+snippet s-bind-property
+	bind:${1:property}={${2:variable}}
+	
+# bind property
+snippet s-bind-video
+	<video
+	src={${1:clip}}
+	bind:${2:duration}
+	bind:${3:buffered}
+	bind:${4:played}
+	bind:${5:seekable}
+	bind:${6:seeking}
+	bind:${7:ended}
+	bind:${8:currentTime}
+	bind:${9:playbackRate}
+	bind:${10:paused}
+	bind:${11:volume}
+	bind:${12:muted}
+	bind:${13:videoWidth}
+	bind:${14:videoHeight}
+	></video>
+	
+# bind property
+snippet s-bind-audio
+	<audio
+	src={${1:clip}}
+	bind:${2:duration}
+	bind:${3:buffered}
+	bind:${4:played}
+	bind:${5:seekable}
+	bind:${6:seeking}
+	bind:${7:ended}
+	bind:${8:currentTime}
+	bind:${9:playbackRate}
+	bind:${10:paused}
+	bind:${11:volume}
+	bind:${12:muted}
+	></audio>
+	
+# bind property
+snippet s-bind-media-elements
+	bind:${1|duration,buffered,played,seekable,seeking,ended,currentTime,playbackRate,paused,volume,muted,videoWidth,videoHeight|}
+	
+# bind property
+snippet s-bind-block-level
+	bind:${1|clientWidth,clientHeight,offsetWidth,offsetHeight|}={${2:variable}}
+	
+# bind group
+snippet s-bind-group
+	bind:group={${1:variable}}
+	
+# bind this
+snippet s-bind-this
+	bind:this={${1:dom_node}}
+	
+# class
+snippet s-class
+	class:${1:name}={${2:condition}}
+	
+# class shorthand
+snippet s-class-short
+	class:${1:name}}
+	
+# use action
+snippet s-use
+	use:action
+	
+# use action w/ parameters
+snippet s-use-parameters
+	use:action={${1:parameters}}
+	
+# transition
+snippet s-transition
+	${1|transition,in,out|}:${2:name}
+	
+# transition-params
+snippet s-transition-params
+	${1|transition,in,out|}:${2:name}={${3:params}}
+	
+# transition-events
+snippet s-transition-events
+	on:${1|introstart,introend,outrostart,outroend|}="{() => status = '${1|introstart,introend,outrostart,outroend|}'}"
+	
+# transition local
+snippet s-transition-local
+	${1|transition,in,out|}:${2:name}|${3:local}
+	
+# transition
+snippet s-transition-all
+	${1|transition,in,out|}:${2:name}|${3:local}={${4:params}}
+	
+# animate
+snippet s-animate
+	animate:${1:name}={${2:params}}
+	
+# slot
+snippet s-slot
+	<slot>${1:<!-- optional fallback -->}</slot>
+	
+# slot w/ name
+snippet s-slot-name
+	<slot name="${1:x}">${2:<!-- optional fallback -->}</slot>
+	
+# slot w/ prop
+snippet s-slot-prop
+	<slot ${1:prop}={${2:value}}>${3:<!-- optional fallback -->}</slot>
+	
+# svelte:self
+snippet s-self
+	<svelte:self />
+	
+# svelte:self
+snippet s-self-prop
+	<svelte:self ${1:prop}={${2:value}} />
+	
+# svelte:component
+snippet s-component
+	<svelte:component this={${1:component}} />
+	
+# svelte:window
+snippet s-window
+	<svelte:window />
+	
+# svelte:window bind properties
+snippet s-window-bind
+	bind:${1|innerWidth,innerHeight,outerWidth,outerHeight,scrollX,scrollY,online|}={${2:variable}}
+	
+# svelte:body
+snippet s-body
+	<svelte:body />
+	
+# svelte:head
+snippet s-head
+	<svelte:head>
+		${1:<!-- head content -->}
+	</svelte:head>
+	
+# svelte:options
+snippet s-options
+	<svelte:options ${1|immutable,accessors,namespace,tag|}={${2:value}}/>
+	
