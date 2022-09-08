@@ -51,7 +51,7 @@ async function loadSnips(source: string) {
             );
             Object.assign(merge, parse(file_data));
         }
-        await generate(format(merge), filename.split(".json").join(""));
+     await generate(format(merge), filename.split(".json").join(""));
     } catch (error) {
         Clean();
     }
@@ -60,12 +60,11 @@ async function loadSnips(source: string) {
 async function Install(url: string[] | string, name: string) {
     var source_path = `${global.__project_path}sources/`;
 
-    
     let source: string = source_path.concat(`${name}/${name}.json`);
     mkdir(source_path + name, (error: any) => {
         if (error) console.warn("exists");
     });
     await loadStream(url, name);
-   await loadSnips(source);
+    await loadSnips(source);
 }
 export default Install;
