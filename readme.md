@@ -1,4 +1,5 @@
 # CodeSnip
+#NOTE: THIS PLUGIN IS NOT READY FOR USE
 
 #### CodeSnip is a snippets generator plugin for acode editor
 
