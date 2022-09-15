@@ -4,7 +4,7 @@
     "main": "dist/index.js",
     "version": "1.0.0",
     "readme": "readme.md",
-    "icon": "icon.png",
+    "icon": "codesnip.png",
     "files": [
         "dist/index.js",
         "dist/install.js",
