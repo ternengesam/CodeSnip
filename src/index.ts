@@ -8,6 +8,7 @@ import rimraf from "rimraf";
 
 class CodeSnip {
   constructor() {}
+  __project_path: string = "";
   init(): any {
     mkdir(this.__project_path, () => {});
     mkdir(this.__project_path + "sources", () => {});
@@ -22,6 +23,9 @@ class CodeSnip {
 ///
 
 const codesnip = new CodeSnip();
-global.__project_path = process.cwd() + "/src/";
+
+// edit this line to your desired path
+global.__project_path = /* start here ---> */ process.cwd() + "/src/";
+// edit the above line
 codesnip.__project_path = global.__project_path;
 codesnip.init();

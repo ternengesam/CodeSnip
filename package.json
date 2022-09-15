@@ -7,10 +7,9 @@
     "license": "MIT",
     "private": false,
     "scripts": {
-        "start:build": "node dist/index.js",
-        "start:dev": "nodemon",
-        "build": "rimraf dist && babel src --out-dir dist --extensions '.ts'"
-    },
+        "start:build": "ts-node --files src/index.ts",
+        "start:dev": "nodemon"
+  },
     "dependencies": {
         "glob": "^8.0.3",
         "json5": "^2.2.1",
