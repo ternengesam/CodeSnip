@@ -45,8 +45,8 @@ export const flask: string[] = [
 ];
 
 // export const lua: string[] = [];
-// export const java: string[] = [];
-// export const kotlin: string[] = [];
+ export const java: string[] = ["https://raw.githubusercontent.com/tushortz/vscode-Java-Snippets/master/snippets/java_complete.json"];
+ export const kotlin: string[] = ["https://raw.githubusercontent.com/mathiasfrohlich/vscode-kotlin/master/snippets/kotlin.json"];
 // export const dart: string[] = [];
 // export const swift: string[] = [];
 // export const c_cpp: string[] = [];

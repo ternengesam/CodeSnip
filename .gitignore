@@ -11,6 +11,7 @@ node_modules
 src/sources
 src/snippets
 dist-ssr
+dist
 *.local
 
 # Editor directories and files
