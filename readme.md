@@ -1,5 +1,7 @@
 # CodeSnip
 
+## wait, before you continue give this repo a star ⭐
+
 #### CodeSnip is a snippets generator for acode editor
 
 ##### it generates and formats vscode snippets for acode
